@@ -35,5 +35,5 @@ jar {
 }
 
 
-mainClassName = 'main.LazzaroBreakout'
+mainClassName = 'main.LazzaroBreakoutApp'
 
