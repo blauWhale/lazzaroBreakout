@@ -18,7 +18,6 @@ public class Ball extends GameObject {
     private Direction direction = Direction.STOP;
 
     private final static double SPEED = 250;
-
     public Ball(double x, double y, Platform platform) {
         super(x, y, Images.BALL);
         this.platform = platform;
@@ -51,6 +50,9 @@ public class Ball extends GameObject {
     private void changeDirectionAtBoarder() {
         if (y < 0){
             setDirection(Direction.DOWN);
+        }
+        if (this.collidesWith(platform)) {
+            setDirection(Direction.UP);
         }
         if (y > SCREEN_HEIGHT){
             setDirection(Direction.UP);
