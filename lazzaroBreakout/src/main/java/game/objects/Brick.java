@@ -8,8 +8,8 @@ public class Brick extends GameObject{
 
     public int brickWall[][];
 
-    public Brick(double row, double col, Image image) {
-        super(row, col, image);
+    public Brick(double x, double y, Image image, int row, int col) {
+        super(x, y, image);
         brickWall = new int[(int) row][(int) col];
         for (int i = 0; i < brickWall.length; i++){
             for (int j = 0; j < brickWall[0].length; j++){
@@ -23,7 +23,7 @@ public class Brick extends GameObject{
         for (int i = 0; i < brickWall.length; i++){
             for (int j = 0; j < brickWall[0].length; j++){
                if (brickWall[i][j] > 0){
-                   gc.drawImage(Images.BRICK, j * Images.BRICK.getWidth() + 10, i * Images.BRICK.getHeight() + 10);
+                   gc.drawImage(Images.BRICK, j * Images.BRICK.getWidth() + 50, i * Images.BRICK.getHeight() + 30);
                }
             }
         }

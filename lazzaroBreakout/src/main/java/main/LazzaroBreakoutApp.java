@@ -2,6 +2,7 @@ package main;
 
 import game.Direction;
 import game.MouseEventHandler;
+import game.objects.Ball;
 import game.objects.Brick;
 import game.objects.GameObject;
 import game.objects.Platform;
@@ -24,7 +25,8 @@ public class LazzaroBreakoutApp extends Application {
     private Canvas canvas;
     private GraphicsContext gc;
     private long lastTimeInNanoSec;
-    private Brick brickWall = new Brick(5,5,BRICK);
+    private Brick brickWall = new Brick(0,0, BRICK, 5,5);
+    private Ball ball = new Ball(platform.getX(),420);
 
     public static void main(String[] args) {
         launch(args);
@@ -69,6 +71,8 @@ public class LazzaroBreakoutApp extends Application {
         gc.drawImage(GAME_BACKGROUND, 0, 0);
         platform.draw(gc);
         brickWall.draw(gc);
+        ball.draw(gc);
+
         }
 
     private void update(double deltaInSec) {
