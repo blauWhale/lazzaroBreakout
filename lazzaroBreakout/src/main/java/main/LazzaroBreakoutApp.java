@@ -2,6 +2,7 @@ package main;
 
 import game.Direction;
 import game.Images;
+import game.Status;
 import game.objects.Life;
 import game.Points;
 import game.objects.Ball;
@@ -36,7 +37,7 @@ public class LazzaroBreakoutApp extends Application {
     private Brick brickWall = new Brick(0,0, BRICK, 5,5);
     private Ball ball = new Ball(platform.getX(),platform.getY() - PLATFORM.getHeight() + BALL.getHeight());
     private List<Life> lifes = new ArrayList<Life>();
-    boolean mousewasclicked;
+    boolean mousewasclicked = false;
 
 
 
@@ -82,10 +83,17 @@ public class LazzaroBreakoutApp extends Application {
             }
         });
 
-        scene.setOnMouseMoved(e -> {
+        scene.setOnMouseClicked(e -> {
             if (mousewasclicked){
+               ball.setStatus(Status.PLAY);
 
             }
+            else{
+                ball.setStatus(Status.START);
+                mousewasclicked = false;
+            }
+
+
         });
 
         lifes.add(new Life(60, 450));
@@ -111,6 +119,7 @@ public class LazzaroBreakoutApp extends Application {
     private void update(double deltaInSec) {
         platform.update(deltaInSec);
         ball.setX(platform.getX() + PLATFORM.getWidth()/2);
+        ball.update(deltaInSec);
     }
 
 }

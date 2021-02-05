@@ -1,11 +1,13 @@
 package game.objects;
 
-import game.Space;
-import game.Images;
+import game.*;
+
+import static game.Status.*;
 
 public class Ball extends GameObject {
-    public final static double BALLPOSX = 300;
-    public final static double BALLPOSY = 400;
+
+    private Status status = Status.STOP;
+
 
     private final static double SPEED = 100;
 
@@ -15,6 +17,26 @@ public class Ball extends GameObject {
 
     @Override
     public void update(double deltaInSec) {
-        y -= SPEED * deltaInSec;
+        double distanceToMove = SPEED * deltaInSec;
+        switch (status) {
+            case START -> {
+                y -= SPEED * deltaInSec;
+            }
+            case PLAY -> {
+                //TODO
+            }
+            case STOP -> {
+                //TODO
+                }
+            }
+        }
+
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }
