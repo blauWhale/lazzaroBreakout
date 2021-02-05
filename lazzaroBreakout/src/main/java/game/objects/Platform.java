@@ -31,6 +31,8 @@ public class Platform extends GameObject {
                     x += distanceToMove;
             }
             case STOP -> {
+                x = getX();
+                y = getY();
             }
         }
 

@@ -88,6 +88,7 @@ public class LazzaroBreakoutApp extends Application {
             }
             else{
                 ball.setStatus(Status.PLAY);
+                ball.setDirection(Direction.UP);
                 mousewasclicked = true;
             }
 
@@ -116,7 +117,6 @@ public class LazzaroBreakoutApp extends Application {
 
     private void update(double deltaInSec) {
         platform.update(deltaInSec);
-        ball.setX(platform.getX() + PLATFORM.getWidth()/2);
         ball.update(deltaInSec);
     }
 
