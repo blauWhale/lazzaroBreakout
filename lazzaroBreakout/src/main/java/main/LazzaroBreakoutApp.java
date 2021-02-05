@@ -1,10 +1,11 @@
 package main;
 
 import game.Direction;
-import game.MouseEventHandler;
+import game.Images;
+import game.objects.Life;
+import game.Points;
 import game.objects.Ball;
 import game.objects.Brick;
-import game.objects.GameObject;
 import game.objects.Platform;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -12,7 +13,14 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Label;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
+
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import static game.Constant.SCREEN_HEIGHT;
 import static game.Constant.SCREEN_WIDTH;
@@ -26,7 +34,11 @@ public class LazzaroBreakoutApp extends Application {
     private GraphicsContext gc;
     private long lastTimeInNanoSec;
     private Brick brickWall = new Brick(0,0, BRICK, 5,5);
-    private Ball ball = new Ball(platform.getX(),420);
+    private Ball ball = new Ball(platform.getX(),platform.getY() - PLATFORM.getHeight() + BALL.getHeight());
+    private List<Life> lifes = new ArrayList<Life>();
+    boolean mousewasclicked;
+
+
 
     public static void main(String[] args) {
         launch(args);
@@ -41,15 +53,23 @@ public class LazzaroBreakoutApp extends Application {
                 long deltaInNanoSec = currentTimeInNanoSec - lastTimeInNanoSec;
                 double deltaInSec = deltaInNanoSec / 1000000000d;
                 lastTimeInNanoSec = currentTimeInNanoSec;
+
                 update(deltaInSec);
                 paint();
+
             }
         }.start();
+
+        Label score = new Label("100");
+        score.setFont(new Font("Arial", 40));
+        score.setLayoutX(500);
+        score.setLayoutY(450);
 
 
         Group root = new Group();
         canvas = new Canvas(SCREEN_WIDTH, SCREEN_HEIGHT);
         root.getChildren().add(canvas);
+        root.getChildren().add(score);
         gc = canvas.getGraphicsContext2D();
         Scene scene = new Scene(root);
 
@@ -62,6 +82,16 @@ public class LazzaroBreakoutApp extends Application {
             }
         });
 
+        scene.setOnMouseMoved(e -> {
+            if (mousewasclicked){
+
+            }
+        });
+
+        lifes.add(new Life(60, 450));
+        lifes.add(new Life(80, 450));
+        lifes.add(new Life(100, 450));
+
         stage.setTitle("Lazzaro Breakout");
         stage.setScene(scene);
         stage.show();
@@ -72,11 +102,15 @@ public class LazzaroBreakoutApp extends Application {
         platform.draw(gc);
         brickWall.draw(gc);
         ball.draw(gc);
+        for (Life lifes : lifes) {
+            lifes.draw(gc);
+        }
 
         }
 
     private void update(double deltaInSec) {
         platform.update(deltaInSec);
+        ball.setX(platform.getX() + PLATFORM.getWidth()/2);
     }
 
 }

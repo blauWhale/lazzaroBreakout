@@ -8,6 +8,7 @@ public class Images {
     public final static Image PLATFORM = getImage("platform.png");
     public final static Image BALL = getImage("ball.png");
     public final static Image BRICK = getImage("brick.png");
+    public final static Image HEART = getImage("heart.png");
 
     private static Image getImage(String imagePath) {
         return new Image("/Images/" + imagePath);
