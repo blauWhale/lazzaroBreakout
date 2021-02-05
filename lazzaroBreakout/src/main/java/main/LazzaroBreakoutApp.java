@@ -35,11 +35,9 @@ public class LazzaroBreakoutApp extends Application {
     private GraphicsContext gc;
     private long lastTimeInNanoSec;
     private Brick brickWall = new Brick(0,0, BRICK, 5,5);
-    private Ball ball = new Ball(platform.getX(),platform.getY() - PLATFORM.getHeight() + BALL.getHeight());
+    private Ball ball = new Ball(0, 0, platform);
     private List<Life> lifes = new ArrayList<Life>();
     boolean mousewasclicked = false;
-
-
 
     public static void main(String[] args) {
         launch(args);
@@ -85,12 +83,12 @@ public class LazzaroBreakoutApp extends Application {
 
         scene.setOnMouseClicked(e -> {
             if (mousewasclicked){
-               ball.setStatus(Status.PLAY);
+             //  ball.setStatus(Status.STOP);
 
             }
             else{
-                ball.setStatus(Status.START);
-                mousewasclicked = false;
+                ball.setStatus(Status.PLAY);
+                mousewasclicked = true;
             }
 
 
