@@ -144,8 +144,11 @@ public class LazzaroBreakoutApp extends Application {
             if (brick.collidesWith(ball)) {
                 checkBrick();
                 wallOfBricks.remove(brick);
-
-
+            }
+        }
+        for (int i = 2; i > 0; i--){
+            if(ball.getY() > platform.getY()) {
+                lifes.remove(i);
             }
         }
     }
