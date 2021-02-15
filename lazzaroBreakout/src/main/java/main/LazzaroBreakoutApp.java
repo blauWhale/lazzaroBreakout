@@ -34,8 +34,8 @@ public class LazzaroBreakoutApp extends Application {
     private Canvas canvas;
     private GraphicsContext gc;
     private long lastTimeInNanoSec;
-    private Brick brickWall = new Brick(0,0, BRICK, 5,5);
     private Ball ball = new Ball(0, 0, platform);
+    private Brick brickWall = new Brick(0,0, BRICK, 5,5, ball);
     private List<Life> lifes = new ArrayList<Life>();
     boolean mousewasclicked = false;
 
@@ -52,7 +52,6 @@ public class LazzaroBreakoutApp extends Application {
                 long deltaInNanoSec = currentTimeInNanoSec - lastTimeInNanoSec;
                 double deltaInSec = deltaInNanoSec / 1000000000d;
                 lastTimeInNanoSec = currentTimeInNanoSec;
-
                 update(deltaInSec);
                 paint();
 
@@ -118,6 +117,7 @@ public class LazzaroBreakoutApp extends Application {
     private void update(double deltaInSec) {
         platform.update(deltaInSec);
         ball.update(deltaInSec);
+        brickWall.update(deltaInSec);
     }
 
 }
