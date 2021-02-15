@@ -35,8 +35,8 @@ public class LazzaroBreakoutApp extends Application {
     private GraphicsContext gc;
     private long lastTimeInNanoSec;
     private Ball ball = new Ball(0, 0, platform);
-    private Brick brickWall = new Brick(0,0, BRICK, 5,5, ball);
     private List<Life> lifes = new ArrayList<Life>();
+    private List<Brick> wallOfBricks = new ArrayList<Brick>();
     boolean mousewasclicked = false;
 
     public static void main(String[] args) {
@@ -98,6 +98,20 @@ public class LazzaroBreakoutApp extends Application {
         lifes.add(new Life(80, 450));
         lifes.add(new Life(100, 450));
 
+        wallOfBricks.add(new Brick(400, 20));
+        wallOfBricks.add(new Brick(300, 20));
+        wallOfBricks.add(new Brick(200, 20));
+        wallOfBricks.add(new Brick(100, 20));
+
+        wallOfBricks.add(new Brick(100, 50));
+        wallOfBricks.add(new Brick(200, 50));
+        wallOfBricks.add(new Brick(300, 50));
+        wallOfBricks.add(new Brick(400, 50));
+
+
+
+
+
         stage.setTitle("Lazzaro Breakout");
         stage.setScene(scene);
         stage.show();
@@ -106,10 +120,12 @@ public class LazzaroBreakoutApp extends Application {
     private void paint() {
         gc.drawImage(GAME_BACKGROUND, 0, 0);
         platform.draw(gc);
-        brickWall.draw(gc);
         ball.draw(gc);
         for (Life lifes : lifes) {
             lifes.draw(gc);
+        }
+        for (Brick wallOfBricks  : wallOfBricks ) {
+            wallOfBricks.draw(gc);
         }
 
         }
@@ -117,7 +133,11 @@ public class LazzaroBreakoutApp extends Application {
     private void update(double deltaInSec) {
         platform.update(deltaInSec);
         ball.update(deltaInSec);
-        brickWall.update(deltaInSec);
+        for (Brick brick : wallOfBricks) {
+            if (brick.collidesWith(ball)) {
+                wallOfBricks.remove(brick);
+            }
+        }
     }
 
 }

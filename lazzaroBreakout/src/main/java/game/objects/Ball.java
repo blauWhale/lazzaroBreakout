@@ -8,8 +8,7 @@ import javafx.geometry.Bounds;
 
 import static game.Constant.SCREEN_HEIGHT;
 import static game.Constant.SCREEN_WIDTH;
-import static game.Images.BALL;
-import static game.Images.PLATFORM;
+import static game.Images.*;
 import static game.Status.*;
 
 public class Ball extends GameObject {
@@ -47,6 +46,7 @@ public class Ball extends GameObject {
                 this.setY(this.getY() + this.getStepY() * getSPEED());
                 changeDirectionAtBoarder();
                 checkBorders();
+                checkBrick();
             }
 
 
@@ -91,6 +91,12 @@ public class Ball extends GameObject {
         }
 
     }
+
+    public void checkBrick() {
+
+    }
+
+
 
     public double getX() {
         return x;
