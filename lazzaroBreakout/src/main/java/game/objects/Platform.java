@@ -8,7 +8,7 @@ public class Platform extends GameObject {
 
     private Direction direction = Direction.STOP;
 
-    private final static double SPEED = 200;
+    private final static double SPEED = 300;
 
 
     public Platform() {

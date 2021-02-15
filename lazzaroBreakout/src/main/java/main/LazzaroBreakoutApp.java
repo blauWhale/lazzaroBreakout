@@ -73,7 +73,7 @@ public class LazzaroBreakoutApp extends Application {
 
         scene.setOnMouseMoved(e -> {
             double mouseXPos = e.getX();
-            if(e.getX() >= SCREEN_WIDTH/2) {
+            if(e.getX() >= platform.getX() + PLATFORM.getWidth()/2) {
                 platform.setDirection(Direction.RIGHT);
             } else {
                 platform.setDirection(Direction.LEFT);

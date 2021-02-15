@@ -8,9 +8,8 @@ game/Points.java
  game.Points
 game/Direction.java
  game.Direction
-game/objects/Platform.java
- game.objects.Platform
- game.objects.Platform$1
+game/objects/Life.java
+ game.objects.Life
 game/objects/GameObject.java
  game.objects.GameObject
 game/Constant.java
@@ -19,13 +18,14 @@ game/Images.java
  game.Images
 game/Space.java
  game.Space
+gui/GameScene.java
+ gui.GameScene
+game/objects/Platform.java
+ game.objects.Platform
+ game.objects.Platform$1
 game/objects/Ball.java
  game.objects.Ball
  game.objects.Ball$1
-game/objects/Life.java
- game.objects.Life
-gui/GameScene.java
- gui.GameScene
 main/LazzaroBreakoutApp.java
  main.LazzaroBreakoutApp
  main.LazzaroBreakoutApp$1
