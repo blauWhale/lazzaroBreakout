@@ -34,17 +34,9 @@ public class Ball extends GameObject {
         double distanceToMove = SPEED * deltaInSec;
         switch (status) {
             case PLAY -> {
-                switch (direction) {
-                    case UP -> {
-                        this.setStepY(-1);
-                    }
-                    case DOWN -> {
-                        this.setStepY(1);
-                    }
-                }
                 this.setX(this.getX() + this.getStepX() * getSPEED());
                 this.setY(this.getY() + this.getStepY() * getSPEED());
-                changeDirectionAtBoarder();
+                changeDirectionAtPlatform();
                 checkBorders();
             }
 
@@ -57,17 +49,10 @@ public class Ball extends GameObject {
         }
     }
 
-    private void changeDirectionAtBoarder() {
-        if (y < 0) {
-            setDirection(Direction.DOWN);
-        }
+    private void changeDirectionAtPlatform() {
         if (this.collidesWith(platform)) {
-            setDirection(Direction.UP);
+            this.setStepY(-1);
         }
-        if (y > SCREEN_HEIGHT) {
-            setDirection(Direction.UP);
-        }
-
     }
 
     public void checkBorders() {

@@ -19,13 +19,13 @@ game/Images.java
 game/objects/Platform.java
  game.objects.Platform
  game.objects.Platform$1
-game/Direction.java
- game.Direction
 game/objects/Brick.java
  game.objects.Brick
 game/objects/Ball.java
  game.objects.Ball
  game.objects.Ball$1
+game/Direction.java
+ game.Direction
 main/LazzaroBreakoutApp.java
  main.LazzaroBreakoutApp
  main.LazzaroBreakoutApp$1

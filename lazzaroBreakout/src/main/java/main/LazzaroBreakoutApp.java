@@ -38,6 +38,8 @@ public class LazzaroBreakoutApp extends Application {
     private List<Life> lifes = new ArrayList<Life>();
     private List<Brick> wallOfBricks = new ArrayList<Brick>();
     boolean mousewasclicked = false;
+    private Brick b;
+
 
     public static void main(String[] args) {
         launch(args);
@@ -87,7 +89,7 @@ public class LazzaroBreakoutApp extends Application {
             }
             else{
                 ball.setStatus(Status.PLAY);
-                ball.setDirection(Direction.UP);
+                ball.setStepY(-1);
                 mousewasclicked = true;
             }
 
@@ -98,15 +100,20 @@ public class LazzaroBreakoutApp extends Application {
         lifes.add(new Life(80, 450));
         lifes.add(new Life(100, 450));
 
-        wallOfBricks.add(new Brick(400, 20));
-        wallOfBricks.add(new Brick(300, 20));
-        wallOfBricks.add(new Brick(200, 20));
-        wallOfBricks.add(new Brick(100, 20));
-
-        wallOfBricks.add(new Brick(100, 50));
-        wallOfBricks.add(new Brick(200, 50));
-        wallOfBricks.add(new Brick(300, 50));
         wallOfBricks.add(new Brick(400, 50));
+        wallOfBricks.add(new Brick(300, 50));
+        wallOfBricks.add(new Brick(200, 50));
+        wallOfBricks.add(new Brick(100, 50));
+
+        wallOfBricks.add(new Brick(100, 80));
+        wallOfBricks.add(new Brick(200, 80));
+        wallOfBricks.add(new Brick(300, 80));
+        wallOfBricks.add(new Brick(400, 80));
+
+        wallOfBricks.add(new Brick(100, 110));
+        wallOfBricks.add(new Brick(200, 110));
+        wallOfBricks.add(new Brick(300, 110));
+        wallOfBricks.add(new Brick(400, 110));
 
 
 
@@ -135,17 +142,37 @@ public class LazzaroBreakoutApp extends Application {
         ball.update(deltaInSec);
         for (Brick brick : wallOfBricks) {
             if (brick.collidesWith(ball)) {
+                checkBrick();
                 wallOfBricks.remove(brick);
-                if (ball.getDirection() == Direction.UP){
-                    ball.setDirection(Direction.DOWN);
-                }
-                if (ball.getDirection() == Direction.DOWN){
-                    ball.setDirection(Direction.UP);
-                }
-                ball.setStepX(ball.getStepX() * -1);
-                ball.setStepY(ball.getStepY() * -1);
+
+
             }
         }
     }
 
+    private void checkBrick(){
+        for(Brick b : wallOfBricks){
+            boolean  brickDown = ball.getX() <= b.getX() + BRICK.getWidth() && ball.getX() >= b.getX() -BALL.getWidth() && ball.getY() <= b.getY() +BRICK.getHeight() +3&& ball.getY() >= b.getY() +BRICK.getHeight()-3;
+            boolean  brickUp =   ball.getX() <= b.getX() + BRICK.getWidth() && ball.getX() >= b.getX() -BALL.getWidth() && ball.getY() <= b.getY() -BALL.getHeight() +3&& ball.getY() >= b.getY() -BALL.getHeight()-3;
+            boolean  brickLeft = ball.getY() <= b.getY() + BRICK.getHeight() && ball.getY() >= b.getY() - BALL.getHeight() && ball.getX() <= b.getX() - BALL.getWidth()  +3&& ball.getX() >= b.getX() - BALL.getWidth()-3;
+            boolean  brickRight= ball.getY() <= b.getY() + BRICK.getHeight() && ball.getY() >= b.getY() - BALL.getHeight() && ball.getX() <= b.getX() + BRICK.getWidth() +3&& ball.getX() >= b.getX() + BRICK.getWidth()-3;
+
+            if ( brickLeft) {
+                ball.setStepX(-1);
+            }
+
+            if ( brickRight){
+                ball.setStepX(1);
+            }
+
+            if ( brickDown){
+                ball.setStepY(1);
+                System.out.println(brickDown);
+            }
+
+            if ( brickUp){
+                ball.setStepY(-1);
+            }
+        }
+    }
 }
