@@ -35,7 +35,6 @@ public class Platform extends GameObject {
                 y = getY();
             }
         }
-
     }
 
     public Direction getDirection() {

@@ -2,27 +2,27 @@ game/MouseEventHandler.java
  game.MouseEventHandler
 game/Status.java
  game.Status
-game/objects/Brick.java
- game.objects.Brick
-game/Points.java
- game.Points
-game/Direction.java
- game.Direction
 game/objects/Life.java
  game.objects.Life
+game/Points.java
+ game.Points
+gui/GameScene.java
+ gui.GameScene
+game/Space.java
+ game.Space
 game/objects/GameObject.java
  game.objects.GameObject
 game/Constant.java
  game.Constant
 game/Images.java
  game.Images
-game/Space.java
- game.Space
-gui/GameScene.java
- gui.GameScene
 game/objects/Platform.java
  game.objects.Platform
  game.objects.Platform$1
+game/Direction.java
+ game.Direction
+game/objects/Brick.java
+ game.objects.Brick
 game/objects/Ball.java
  game.objects.Ball
  game.objects.Ball$1

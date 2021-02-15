@@ -136,6 +136,14 @@ public class LazzaroBreakoutApp extends Application {
         for (Brick brick : wallOfBricks) {
             if (brick.collidesWith(ball)) {
                 wallOfBricks.remove(brick);
+                if (ball.getDirection() == Direction.UP){
+                    ball.setDirection(Direction.DOWN);
+                }
+                if (ball.getDirection() == Direction.DOWN){
+                    ball.setDirection(Direction.UP);
+                }
+                ball.setStepX(ball.getStepX() * -1);
+                ball.setStepY(ball.getStepY() * -1);
             }
         }
     }

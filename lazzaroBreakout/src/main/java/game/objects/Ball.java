@@ -46,7 +46,6 @@ public class Ball extends GameObject {
                 this.setY(this.getY() + this.getStepY() * getSPEED());
                 changeDirectionAtBoarder();
                 checkBorders();
-                checkBrick();
             }
 
 
@@ -73,9 +72,9 @@ public class Ball extends GameObject {
 
     public void checkBorders() {
         boolean atRightBorder = this.getX() >= (SCREEN_WIDTH - BALL.getWidth());
-        boolean atLeftBorder = this.getX() <= (0);
+        boolean atLeftBorder = this.getX() <= 0;
         boolean atBottomBorder = this.getY() >= (SCREEN_HEIGHT - BALL.getHeight());
-        boolean atTopBorder = this.getY() <= (SCREEN_HEIGHT);
+        boolean atTopBorder = this.getY() <= 0;
 
         if (atLeftBorder) {
             this.setStepX(1);
@@ -89,14 +88,7 @@ public class Ball extends GameObject {
         if (atBottomBorder) {
             this.setStepY(-1);
         }
-
     }
-
-    public void checkBrick() {
-
-    }
-
-
 
     public double getX() {
         return x;
