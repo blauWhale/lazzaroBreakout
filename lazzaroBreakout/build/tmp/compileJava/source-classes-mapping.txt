@@ -1,5 +1,9 @@
+gui/WinnerScene.java
+ gui.WinnerScene
 game/MouseEventHandler.java
  game.MouseEventHandler
+gui/StartScene.java
+ gui.StartScene
 game/Status.java
  game.Status
 game/objects/Brick.java
@@ -11,21 +15,26 @@ game/Direction.java
 game/objects/Platform.java
  game.objects.Platform
  game.objects.Platform$1
+gui/SceneType.java
+ gui.SceneType
 game/objects/GameObject.java
  game.objects.GameObject
+gui/common/BaseScene.java
+ gui.common.BaseScene
 game/Constant.java
  game.Constant
 game/Images.java
  game.Images
+main/Launcher.java
+ main.Launcher
 game/Space.java
  game.Space
 game/objects/Ball.java
  game.objects.Ball
  game.objects.Ball$1
+gui/GameOverScene.java
+ gui.GameOverScene
 game/objects/Life.java
  game.objects.Life
-gui/GameScene.java
- gui.GameScene
-main/LazzaroBreakoutApp.java
- main.LazzaroBreakoutApp
- main.LazzaroBreakoutApp$1
+gui/Navigator.java
+ gui.Navigator

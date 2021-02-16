@@ -8,6 +8,7 @@ import game.Points;
 import game.objects.Ball;
 import game.objects.Brick;
 import game.objects.Platform;
+import gui.*;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -42,6 +43,8 @@ public class LazzaroBreakoutApp extends Application {
     private Label score = new Label();
 
 
+
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -61,6 +64,8 @@ public class LazzaroBreakoutApp extends Application {
             }
         };
         timer.start();
+
+
 
 
         score.setFont(new Font("Arial bold", 20));
@@ -119,6 +124,14 @@ public class LazzaroBreakoutApp extends Application {
 
         stage.setTitle("Lazzaro Breakout");
         stage.setScene(scene);
+
+        Navigator navigator = new Navigator(stage);
+        navigator.registerScene(SceneType.START_SCREEN, new StartScene(navigator));
+        navigator.registerScene(SceneType.GAMEOVER_SCREEN, new GameOverScene(navigator));
+        navigator.registerScene(SceneType.WINNER_SCREEN, new WinnerScene(navigator));
+        navigator.registerScene(SceneType.GAME_SCREEN, new scene(navigator));
+
+        navigator.goTo(SceneType.START_SCREEN);
         stage.show();
     }
 
