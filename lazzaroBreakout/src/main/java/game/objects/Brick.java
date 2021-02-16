@@ -14,12 +14,12 @@ public class Brick extends GameObject{
 
     public int brickWall[][];
     private Ball ball;
-    private boolean destroyed;
+    private double difficulty;
 
-    public Brick(double x, double y) {
-        super(x, y, Images.BRICK);
+    public Brick(double x, double y, Image image, double difficulty) {
+        super(x, y, image);
+        this.difficulty = difficulty;
     }
-
 
     @Override
     public void update(double deltaInSec) {
@@ -29,12 +29,11 @@ public class Brick extends GameObject{
     }
 
 
-
-    public boolean isDestroyed() {
-        return destroyed;
+    public double getDifficulty() {
+        return difficulty;
     }
 
-    public void setDestroyed(boolean destroyed) {
-        this.destroyed = destroyed;
+    public void setDifficulty(double difficulty) {
+        this.difficulty = difficulty;
     }
 }

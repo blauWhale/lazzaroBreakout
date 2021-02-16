@@ -2,8 +2,8 @@ game/MouseEventHandler.java
  game.MouseEventHandler
 game/Status.java
  game.Status
-game/objects/Brick.java
- game.objects.Brick
+gui/GameScene.java
+ gui.GameScene
 game/Points.java
  game.Points
 game/Direction.java
@@ -24,8 +24,8 @@ game/objects/Ball.java
  game.objects.Ball$1
 game/objects/Life.java
  game.objects.Life
-gui/GameScene.java
- gui.GameScene
+game/objects/Brick.java
+ game.objects.Brick
 main/LazzaroBreakoutApp.java
  main.LazzaroBreakoutApp
  main.LazzaroBreakoutApp$1
