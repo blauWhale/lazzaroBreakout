@@ -26,8 +26,7 @@ import static game.Images.GREEN_BRICK;
 public class GameScene extends BaseScene {
 
     private Platform platform = new Platform();
-    private Canvas canvas;
-    private GraphicsContext gc;
+
     private long lastTimeInNanoSec;
     private Ball ball = new Ball(0, 0, platform);
     private List<Life> lifes = new ArrayList<Life>();
@@ -37,38 +36,21 @@ public class GameScene extends BaseScene {
     private Label score = new Label();
 
     public GameScene(Navigator navigator) {
-        super(navigator);
+        super(navigator, GAME_BACKGROUND);
     }
 
     @Override
     public void start(){
-        lastTimeInNanoSec = System.nanoTime();
-        AnimationTimer timer = new AnimationTimer() {
-            @Override
-            public void handle(long currentTimeInNanoSec) {
-                long deltaInNanoSec = currentTimeInNanoSec - lastTimeInNanoSec;
-                double deltaInSec = deltaInNanoSec / 1000000000d;
-                lastTimeInNanoSec = currentTimeInNanoSec;
-                update(deltaInSec);
-                paint();
-
-            }
-        };
-        timer.start();
 
         score.setFont(new Font("Arial bold", 20));
         score.setLayoutX(420);
         score.setLayoutY(450);
 
-        Group root = new Group();
-        canvas = new Canvas(SCREEN_WIDTH, SCREEN_HEIGHT);
-        root.getChildren().add(canvas);
+        Group root = (Group) getRoot();
         root.getChildren().add(score);
-        gc = canvas.getGraphicsContext2D();
 
-        Scene scene = new Scene(root);
 
-        scene.setOnMouseMoved(e -> {
+        setOnMouseMoved(e -> {
             double mouseXPos = e.getX();
             if (e.getX() >= platform.getX() + PLATFORM.getWidth() / 2) {
                 platform.setDirection(Direction.RIGHT);
@@ -77,7 +59,7 @@ public class GameScene extends BaseScene {
             }
         });
 
-        scene.setOnMouseClicked(e -> {
+        setOnMouseClicked(e -> {
             if (mousewasclicked) {
                 //  ball.setStatus(Status.STOP);
 
@@ -108,6 +90,21 @@ public class GameScene extends BaseScene {
         wallOfBricks.add(new Brick(200, 110, GREEN_BRICK, 0, 100));
         wallOfBricks.add(new Brick(300, 110, GREEN_BRICK, 0, 100));
         wallOfBricks.add(new Brick(400, 110, GREEN_BRICK, 0, 100));
+
+        lastTimeInNanoSec = System.nanoTime();
+        AnimationTimer timer = new AnimationTimer() {
+            @Override
+            public void handle(long currentTimeInNanoSec) {
+                System.out.println("update");
+                long deltaInNanoSec = currentTimeInNanoSec - lastTimeInNanoSec;
+                double deltaInSec = deltaInNanoSec / 1000000000d;
+                lastTimeInNanoSec = currentTimeInNanoSec;
+                update(deltaInSec);
+                paint();
+
+            }
+        };
+        timer.start();
     }
 
 

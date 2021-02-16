@@ -14,6 +14,7 @@ import static game.Constant.SCREEN_WIDTH;
 public abstract class BaseScene extends Scene {
     protected final Navigator navigator;
     protected final Canvas canvas;
+    protected GraphicsContext gc;
 
     public BaseScene(Navigator navigator) {
         super(new Group());
@@ -28,7 +29,7 @@ public abstract class BaseScene extends Scene {
     }
 
     private void drawBackgroundImage(Image backgroundImage){
-        GraphicsContext gc = canvas.getGraphicsContext2D();
+        gc = canvas.getGraphicsContext2D();
         gc.drawImage(backgroundImage, 0, 0);
     }
 
