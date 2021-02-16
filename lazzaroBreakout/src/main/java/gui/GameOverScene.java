@@ -9,4 +9,9 @@ public class GameOverScene extends BaseScene {
     public GameOverScene(Navigator navigator) {
         super(navigator, Images.GAMEOVER);
     }
+
+    @Override
+    public void start() {
+        //TODO
+    }
 }

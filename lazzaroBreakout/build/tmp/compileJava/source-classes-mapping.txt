@@ -25,8 +25,6 @@ game/Constant.java
  game.Constant
 game/Images.java
  game.Images
-main/Launcher.java
- main.Launcher
 game/Space.java
  game.Space
 game/objects/Ball.java
@@ -38,3 +36,8 @@ game/objects/Life.java
  game.objects.Life
 gui/Navigator.java
  gui.Navigator
+gui/GameScene.java
+ gui.GameScene
+ gui.GameScene$1
+main/LazzaroBreakoutApp.java
+ main.LazzaroBreakoutApp

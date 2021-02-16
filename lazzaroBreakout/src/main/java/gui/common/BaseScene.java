@@ -31,4 +31,6 @@ public abstract class BaseScene extends Scene {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.drawImage(backgroundImage, 0, 0);
     }
+
+    public abstract void start();
 }

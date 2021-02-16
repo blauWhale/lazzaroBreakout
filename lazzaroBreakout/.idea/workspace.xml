@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="US-9 done">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/GameOverScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/Navigator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/SceneType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/StartScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/WinnerScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/common/BaseScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/Launcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/game_over.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/welcome.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/winner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
@@ -23,20 +14,25 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/lazzaroBreakout.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/lazzaroBreakout.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/Images.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/Images.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/GameScene.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/main/LazzaroBreakoutApp$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/main/LazzaroBreakoutApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/GameOverScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/GameOverScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/Navigator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/Navigator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/StartScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/StartScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/WinnerScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/WinnerScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/common/BaseScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/common/BaseScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/main/Launcher.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Images.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Images.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/GameOverScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/GameOverScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Navigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/Navigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/StartScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/StartScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/WinnerScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/WinnerScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/common/BaseScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/common/BaseScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Launcher.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/LazzaroBreakoutApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/LazzaroBreakoutApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +61,13 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="lazzaroBreakout" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="lazzaroBreakout" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -99,7 +101,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Applikationsentwicklung/Fallstudie/Lösung" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Lösung Final Version/clean-bbc-spaceinvaders" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -114,15 +116,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -171,6 +171,7 @@
       <workItem from="1613399321497" duration="2386000" />
       <workItem from="1613459267107" duration="7732000" />
       <workItem from="1613468934439" duration="3597000" />
+      <workItem from="1613478050668" duration="4659000" />
     </task>
     <task id="LOCAL-00001" summary="bricks working">
       <created>1612513605007</created>
@@ -272,7 +273,8 @@
     <MESSAGE value="changed mouse controlls" />
     <MESSAGE value="US-8 done" />
     <MESSAGE value="US-9 done" />
-    <option name="LAST_COMMIT_MESSAGE" value="US-9 done" />
+    <MESSAGE value="refactoring of app class with Andreas" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring of app class with Andreas" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

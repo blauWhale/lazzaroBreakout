@@ -11,7 +11,7 @@ public class Images {
     public final static Image GREEN_BRICK = getImage("green_brick.png");
     public final static Image BLUE_BRICK = getImage("blue_brick.png");
     public final static Image BLACK_BRICK = getImage("black_brick.png");
-    public final static Image GAMEOVER = getImage("gameover.png");
+    public final static Image GAMEOVER = getImage("game_over.png");
     public final static Image WELCOME = getImage("welcome.png");
     public final static Image WINNER = getImage("winner.png");
 

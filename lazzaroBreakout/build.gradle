@@ -26,14 +26,13 @@ javafx {
 
 jar {
     manifest{
-        attributes 'Main-Class': 'ch.bbcag.ae.Launcher'
+        attributes 'Main-Class': 'ch.bbcag.ae.LazzaroBreakoutApp'
     }
 
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
-
 
 mainClassName = 'main.LazzaroBreakoutApp'
 
