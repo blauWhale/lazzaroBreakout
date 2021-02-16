@@ -15,10 +15,12 @@ public class Brick extends GameObject{
     public int brickWall[][];
     private Ball ball;
     private double difficulty;
+    private int points;
 
-    public Brick(double x, double y, Image image, double difficulty) {
+    public Brick(double x, double y, Image image, double difficulty, int points) {
         super(x, y, image);
         this.difficulty = difficulty;
+        this.points = points;
     }
 
     @Override
@@ -35,5 +37,13 @@ public class Brick extends GameObject{
 
     public void setDifficulty(double difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
     }
 }

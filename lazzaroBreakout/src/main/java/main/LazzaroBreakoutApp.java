@@ -38,6 +38,8 @@ public class LazzaroBreakoutApp extends Application {
     private List<Life> lifes = new ArrayList<Life>();
     private List<Brick> wallOfBricks = new ArrayList<Brick>();
     boolean mousewasclicked = false;
+    private int currentScore = 0;
+    private Label score = new Label();
 
 
     public static void main(String[] args) {
@@ -60,9 +62,9 @@ public class LazzaroBreakoutApp extends Application {
         };
         timer.start();
 
-        Label score = new Label("100");
-        score.setFont(new Font("Arial", 40));
-        score.setLayoutX(500);
+
+        score.setFont(new Font("Arial bold", 20));
+        score.setLayoutX(420);
         score.setLayoutY(450);
 
 
@@ -99,20 +101,20 @@ public class LazzaroBreakoutApp extends Application {
         lifes.add(new Life(80, 450));
         lifes.add(new Life(100, 450));
 
-        wallOfBricks.add(new Brick(400, 50, BLACK_BRICK, 2));
-        wallOfBricks.add(new Brick(300, 50, BLACK_BRICK, 2));
-        wallOfBricks.add(new Brick(200, 50, BLACK_BRICK, 2));
-        wallOfBricks.add(new Brick(100, 50, BLACK_BRICK, 2));
+        wallOfBricks.add(new Brick(400, 50, BLACK_BRICK, 2,300));
+        wallOfBricks.add(new Brick(300, 50, BLACK_BRICK, 2, 300));
+        wallOfBricks.add(new Brick(200, 50, BLACK_BRICK, 2, 300));
+        wallOfBricks.add(new Brick(100, 50, BLACK_BRICK, 2, 300));
 
-        wallOfBricks.add(new Brick(100, 80, BLUE_BRICK, 1));
-        wallOfBricks.add(new Brick(200, 80, BLUE_BRICK, 1));
-        wallOfBricks.add(new Brick(300, 80, BLUE_BRICK, 1));
-        wallOfBricks.add(new Brick(400, 80, BLUE_BRICK, 1));
+        wallOfBricks.add(new Brick(100, 80, BLUE_BRICK, 1, 200));
+        wallOfBricks.add(new Brick(200, 80, BLUE_BRICK, 1,200));
+        wallOfBricks.add(new Brick(300, 80, BLUE_BRICK, 1,200));
+        wallOfBricks.add(new Brick(400, 80, BLUE_BRICK, 1,200));
 
-        wallOfBricks.add(new Brick(100, 110, GREEN_BRICK, 2));
-        wallOfBricks.add(new Brick(200, 110, GREEN_BRICK, 2));
-        wallOfBricks.add(new Brick(300, 110, GREEN_BRICK, 2));
-        wallOfBricks.add(new Brick(400, 110, GREEN_BRICK, 2));
+        wallOfBricks.add(new Brick(100, 110, GREEN_BRICK, 0,100));
+        wallOfBricks.add(new Brick(200, 110, GREEN_BRICK, 0, 100));
+        wallOfBricks.add(new Brick(300, 110, GREEN_BRICK, 0, 100));
+        wallOfBricks.add(new Brick(400, 110, GREEN_BRICK, 0, 100));
 
 
         stage.setTitle("Lazzaro Breakout");
@@ -140,7 +142,10 @@ public class LazzaroBreakoutApp extends Application {
             if (brick.collidesWith(ball)) {
                 checkBrick();
                 if (brick.getDifficulty() == 0) {
+                    currentScore = currentScore + brick.getPoints();
+                    score.setText("Points:" + Integer.toString(currentScore));
                     wallOfBricks.remove(brick);
+
                 }
                 else {
                     brick.setDifficulty(brick.getDifficulty() - 1);
@@ -179,7 +184,6 @@ public class LazzaroBreakoutApp extends Application {
 
             if (brickDown) {
                 ball.setStepY(1);
-                System.out.println(brickDown);
             }
 
             if (brickUp) {
