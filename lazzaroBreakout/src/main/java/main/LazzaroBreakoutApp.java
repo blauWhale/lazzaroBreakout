@@ -48,7 +48,7 @@ public class LazzaroBreakoutApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         lastTimeInNanoSec = System.nanoTime();
-        new AnimationTimer() {
+        AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long currentTimeInNanoSec) {
                 long deltaInNanoSec = currentTimeInNanoSec - lastTimeInNanoSec;
@@ -58,7 +58,8 @@ public class LazzaroBreakoutApp extends Application {
                 paint();
 
             }
-        }.start();
+        };
+        timer.start();
 
         Label score = new Label("100");
         score.setFont(new Font("Arial", 40));
@@ -146,11 +147,18 @@ public class LazzaroBreakoutApp extends Application {
                 wallOfBricks.remove(brick);
             }
         }
-        for (int i = 2; i > 0; i--){
-            if(ball.getY() > platform.getY()) {
-                lifes.remove(i);
+
+        if(ball.getY() > platform.getY()) {
+            if(lifes.size() > 0){
+                lifes.remove(lifes.size() - 1);
+                ball.resetToPlatform();
+                mousewasclicked = false;
+            }else {
+                System.out.println("Game Over");
+                ball.resetToPlatform();
             }
         }
+
     }
 
     private void checkBrick(){

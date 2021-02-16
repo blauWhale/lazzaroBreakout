@@ -16,7 +16,7 @@ public class Ball extends GameObject {
 
     private Status status = Status.STOP;
 
-    private Platform platform = new Platform();
+    private Platform platform;
     private Direction direction = Direction.STOP;
     double stepX = 1;
     double stepY = -1;
@@ -125,5 +125,10 @@ public class Ball extends GameObject {
 
     public void setDirection(Direction direction) {
         this.direction = direction;
+    }
+
+    public void resetToPlatform(){
+        this.status = STOP;
+        this.stepY = 1;
     }
 }
