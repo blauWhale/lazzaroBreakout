@@ -129,7 +129,7 @@ public class LazzaroBreakoutApp extends Application {
         navigator.registerScene(SceneType.START_SCREEN, new StartScene(navigator));
         navigator.registerScene(SceneType.GAMEOVER_SCREEN, new GameOverScene(navigator));
         navigator.registerScene(SceneType.WINNER_SCREEN, new WinnerScene(navigator));
-        navigator.registerScene(SceneType.GAME_SCREEN, new scene(navigator));
+        navigator.registerScene(SceneType.GAME_SCREEN, new scene(navigator)); //TODO
 
         navigator.goTo(SceneType.START_SCREEN);
         stage.show();
