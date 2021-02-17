@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="US-9 done">
+    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="little refactoring">
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/objects/PowerUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/extraball.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/highscore.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/longplatform.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/powerup.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
@@ -14,10 +19,20 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/Images.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/Images.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/objects/Ball.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/objects/Ball.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/objects/Platform.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/objects/Platform.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/StartScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/StartScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/GameOverScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/GameOverScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/WinnerScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/WinnerScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Images.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Images.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/objects/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/objects/Ball.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/objects/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/objects/Platform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/GameOverScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/GameOverScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/SceneType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/SceneType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/WinnerScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/WinnerScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/LazzaroBreakoutApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/LazzaroBreakoutApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,8 +123,22 @@
       <recent name="main" />
       <recent name="gui" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\java\breakout\lazzarobreakout\lazzaroBreakout\src\main\resources\Images" />
+    </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="lazzaroBreakout [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />

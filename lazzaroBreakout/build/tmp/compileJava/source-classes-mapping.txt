@@ -1,30 +1,34 @@
-gui/WinnerScene.java
- gui.WinnerScene
+game/Constant.java
+ game.Constant
 game/MouseEventHandler.java
  game.MouseEventHandler
-gui/StartScene.java
- gui.StartScene
+gui/SceneType.java
+ gui.SceneType
 game/Status.java
  game.Status
-game/objects/Brick.java
- game.objects.Brick
+gui/common/BaseScene.java
+ gui.common.BaseScene
 game/Points.java
  game.Points
+game/objects/GameObject.java
+ game.objects.GameObject
 game/Direction.java
  game.Direction
+gui/Navigator.java
+ gui.Navigator
+gui/WinnerScene.java
+ gui.WinnerScene
+gui/StartScene.java
+ gui.StartScene
 game/objects/Platform.java
  game.objects.Platform
  game.objects.Platform$1
-gui/SceneType.java
- gui.SceneType
-game/objects/GameObject.java
- game.objects.GameObject
-gui/common/BaseScene.java
- gui.common.BaseScene
-game/Constant.java
- game.Constant
 game/Images.java
  game.Images
+game/objects/Brick.java
+ game.objects.Brick
+game/objects/PowerUp.java
+ game.objects.PowerUp
 game/Space.java
  game.Space
 game/objects/Ball.java
@@ -34,8 +38,6 @@ gui/GameOverScene.java
  gui.GameOverScene
 game/objects/Life.java
  game.objects.Life
-gui/Navigator.java
- gui.Navigator
 gui/GameScene.java
  gui.GameScene
  gui.GameScene$1

@@ -1,20 +1,16 @@
 package game.objects;
-
 import game.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
-
 public class Platform extends GameObject {
 
-
     private Direction direction = Direction.STOP;
-
     private final static double SPEED = 300;
-
-
-    public Platform() {
-        super(Constant.SCREEN_WIDTH / 2, 420, Images.PLATFORM);
+    Image image;
+    public Platform(Image image) {
+        super(Constant.SCREEN_WIDTH / 2, 420, image);
+        this.image = image;
     }
-
     @Override
     public void update(double deltaInSec) {
         double distanceToMove = SPEED * deltaInSec;
@@ -36,14 +32,17 @@ public class Platform extends GameObject {
             }
         }
     }
-
-
+    @Override
+    public Image getImage() {
+        return image;
+    }
+    public void setImage(Image image) {
+        this.image = image;
+    }
     public Direction getDirection() {
         return direction;
     }
-
     public void setDirection(Direction direction) {
         this.direction = direction;
     }
-
 }

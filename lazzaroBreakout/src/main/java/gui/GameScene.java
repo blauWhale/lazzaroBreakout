@@ -1,11 +1,9 @@
 package gui;
 
 import game.Direction;
+import game.Images;
 import game.Status;
-import game.objects.Ball;
-import game.objects.Brick;
-import game.objects.Life;
-import game.objects.Platform;
+import game.objects.*;
 import gui.common.BaseScene;
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
@@ -25,15 +23,20 @@ import static game.Images.GREEN_BRICK;
 
 public class GameScene extends BaseScene {
 
-    private Platform platform = new Platform();
-
+    private Platform platform = new Platform(Images.PLATFORM);
     private long lastTimeInNanoSec;
-    private Ball ball = new Ball(0, 0, platform);
+    private Ball ball = new Ball(0, 0, BALL, platform, Status.STOP);
     private List<Life> lifes = new ArrayList<Life>();
     private List<Brick> wallOfBricks = new ArrayList<Brick>();
     boolean mousewasclicked = false;
     private int currentScore = 0;
+    private int highestScore = -1;
     private Label score = new Label();
+    private Label highScore = new Label();
+    private List<Ball> balls = new ArrayList<Ball>();
+    private static final double POWERUP_CHANCE = 5;
+    private List<PowerUp> powerUpslist = new ArrayList<PowerUp>();
+
 
     public GameScene(Navigator navigator) {
         super(navigator, GAME_BACKGROUND);
@@ -45,16 +48,19 @@ public class GameScene extends BaseScene {
         score.setFont(new Font("Arial bold", 20));
         score.setLayoutX(420);
         score.setLayoutY(450);
+        highScore.setFont(new Font("Arial bold", 20));
+        highScore.setLayoutX(420);
+        highScore.setLayoutY(475);
 
         Group root = (Group) getRoot();
         root.getChildren().add(score);
+        root.getChildren().add(highScore);
 
 
         setOnMouseMoved(e -> {
             double mouseXPos = e.getX();
             double middlePoint = platform.getX() + PLATFORM.getWidth() / 2;
             if (mouseXPos - middlePoint < 30 && mouseXPos - middlePoint > -30 ){
-                System.out.println("I stopped");
                 platform.setDirection(Direction.STOP);
             }
             else if (mouseXPos > middlePoint) {
@@ -63,7 +69,6 @@ public class GameScene extends BaseScene {
             else if (mouseXPos < middlePoint){
                 platform.setDirection(Direction.LEFT);
             }
-
             });
 
         setOnMouseClicked(e -> {
@@ -124,6 +129,12 @@ public class GameScene extends BaseScene {
         for (Brick wallOfBricks : wallOfBricks) {
             wallOfBricks.draw(gc);
         }
+        for (PowerUp powerUps : powerUpslist) {
+            powerUps.draw(gc);
+        }
+        for (Ball balls : balls) {
+            balls.draw(gc);
+        }
     }
 
     private void update(double deltaInSec) {
@@ -134,19 +145,26 @@ public class GameScene extends BaseScene {
                 checkBrick();
                 if (brick.getDifficulty() == 0) {
                     currentScore = currentScore + brick.getPoints();
+                    dropPowerUp(deltaInSec, brick.getX(), brick.getY());
                     score.setText("Points:" + Integer.toString(currentScore));
                     wallOfBricks.remove(brick);
 
-                }
-                else {
+                } else {
                     brick.setDifficulty(brick.getDifficulty() - 1);
                 }
-
             }
         }
 
-        if (wallOfBricks.size() == 0){
+        if (wallOfBricks.size() == 0) {
             navigator.goTo(SceneType.WINNER_SCREEN);
+            highestScore = currentScore;
+            if (highestScore < currentScore) {
+                highScore.setText("High-Score:" + Integer.toString(currentScore));
+            } else if (highestScore > currentScore) {
+                highScore.setText("High-Score:" + Integer.toString(highestScore));
+            } else if (highestScore == currentScore) {
+                highScore.setText("High-Score:" + Integer.toString(highestScore));
+            }
         }
 
         if (ball.getY() > platform.getY()) {
@@ -154,14 +172,33 @@ public class GameScene extends BaseScene {
                 lifes.remove(lifes.size() - 1);
                 ball.resetToPlatform();
                 mousewasclicked = false;
-            }
-            else {
-                System.out.println("Game Over");
+            } else {
                 navigator.goTo(SceneType.GAMEOVER_SCREEN);
                 ball.resetToPlatform();
+                if (highestScore < currentScore) {
+                    highScore.setText("High-Score:" + Integer.toString(currentScore));
+                } else if (highestScore > currentScore) {
+                    highScore.setText("High-Score:" + Integer.toString(highestScore));
+                } else if (highestScore == currentScore) {
+                    highScore.setText("High-Score:" + Integer.toString(highestScore));
+                }
             }
         }
-
+        for (Ball balls : balls) {
+            balls.update(deltaInSec);
+        }
+        for (Ball otherBalls : balls) {
+            if (otherBalls.getY() > platform.getY()) {
+                balls.remove(otherBalls);
+            }
+        }
+        for (PowerUp powerUps : powerUpslist) {
+            powerUps.update(deltaInSec);
+            if (powerUps.collidesWith(platform)) {
+                checkPowerUp(powerUps.getPowerType());
+                powerUpslist.remove(powerUps);
+            }
+        }
     }
 
     private void checkBrick() {
@@ -185,6 +222,34 @@ public class GameScene extends BaseScene {
 
             if (brickUp) {
                 ball.setStepY(-1);
+            }
+        }
+    }
+
+    private void dropPowerUp(double deltaInSec, double brickPosX, double brickPosY) {
+        if (5 == /*Math.random() < deltaInSec */ POWERUP_CHANCE) {
+            powerUpslist.add(new PowerUp(brickPosX, brickPosY, POWERUP, 3));
+        }
+    }
+    private void checkPowerUp(double PowerType) {
+        switch ((int) PowerType) {
+            case 1 -> {
+                //Extra Leben
+                if (lifes.size() < 4) {
+                    lifes.add(new Life(120, 450));
+                }
+            }
+            case 2 -> {
+                //Doppelte Punkte
+                for (Brick brick : wallOfBricks) {
+                    brick.setPoints(brick.getPoints() * 2);
+                }
+            }
+            case 3 -> {
+                balls.add(new Ball(ball.getX() + 50,ball.getY(),Images.EXTRABALL,platform, Status.PLAY));
+            }
+            case 4 -> {
+                platform.setImage(LONGPLATFORM);
             }
         }
     }
