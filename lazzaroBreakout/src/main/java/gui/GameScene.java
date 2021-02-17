@@ -52,12 +52,13 @@ public class GameScene extends BaseScene {
 
         setOnMouseMoved(e -> {
             double mouseXPos = e.getX();
-            if (e.getX() >= platform.getX() + PLATFORM.getWidth() / 2) {
+            double middlePoint = platform.getX() + PLATFORM.getWidth() / 2;
+            if (mouseXPos >= middlePoint) {
                 platform.setDirection(Direction.RIGHT);
-            } else {
+            } else  if (mouseXPos < middlePoint){
                 platform.setDirection(Direction.LEFT);
             }
-        });
+            });
 
         setOnMouseClicked(e -> {
             if (mousewasclicked) {

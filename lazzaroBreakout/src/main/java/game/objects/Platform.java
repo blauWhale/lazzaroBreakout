@@ -27,12 +27,14 @@ public class Platform extends GameObject {
                 }
             }
             case RIGHT -> {
-                if (getX() < Constant.SCREEN_WIDTH - getImage().getWidth())
+                if (x < Constant.SCREEN_WIDTH - getImage().getWidth())
                     x += distanceToMove;
             }
             case STOP -> {
-                x = getX();
-                y = getY();
+                //TODO Cleanup
+
+              //   x = getX();
+              //  y = getY();
             }
         }
     }

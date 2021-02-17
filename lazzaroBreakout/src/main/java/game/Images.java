@@ -13,7 +13,7 @@ public class Images {
     public final static Image BLACK_BRICK = getImage("black_brick.png");
     public final static Image GAMEOVER = getImage("game_over.png");
     public final static Image WELCOME = getImage("welcome.png");
-    public final static Image WINNER = getImage("winner.png");
+    public final static Image WINNER =  getImage("winner.png");
 
 
 

@@ -13,13 +13,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/Navigator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/Navigator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Images.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Images.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/objects/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/objects/Platform.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/StartScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/StartScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/game_over.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/game_over.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/welcome.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/welcome.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/winner.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/winner.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,17 +109,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="lazzaroBreakout [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -170,6 +156,7 @@
       <workItem from="1613478050668" duration="4659000" />
       <workItem from="1613490005963" duration="818000" />
       <workItem from="1613545291294" duration="1499000" />
+      <workItem from="1613547769045" duration="1213000" />
     </task>
     <task id="LOCAL-00001" summary="bricks working">
       <created>1612513605007</created>
