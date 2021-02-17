@@ -1,10 +1,9 @@
-game/Space.java
- game.Space
+gui/WinnerScene.java
+ gui.WinnerScene
 game/MouseEventHandler.java
  game.MouseEventHandler
-game/objects/Ball.java
- game.objects.Ball
- game.objects.Ball$1
+gui/StartScene.java
+ gui.StartScene
 game/Status.java
  game.Status
 game/objects/Brick.java
@@ -20,20 +19,21 @@ gui/SceneType.java
  gui.SceneType
 game/objects/GameObject.java
  game.objects.GameObject
-game/objects/Life.java
- game.objects.Life
+gui/common/BaseScene.java
+ gui.common.BaseScene
 game/Constant.java
  game.Constant
 game/Images.java
  game.Images
-gui/WinnerScene.java
- gui.WinnerScene
-gui/StartScene.java
- gui.StartScene
-gui/common/BaseScene.java
- gui.common.BaseScene
+game/Space.java
+ game.Space
+game/objects/Ball.java
+ game.objects.Ball
+ game.objects.Ball$1
 gui/GameOverScene.java
  gui.GameOverScene
+game/objects/Life.java
+ game.objects.Life
 gui/Navigator.java
  gui.Navigator
 gui/GameScene.java

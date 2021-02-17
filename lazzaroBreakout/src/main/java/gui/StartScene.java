@@ -15,6 +15,5 @@ public class StartScene extends BaseScene {
 
     @Override
     public void start() {
-        //TODO
     }
 }

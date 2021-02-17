@@ -95,7 +95,6 @@ public class GameScene extends BaseScene {
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long currentTimeInNanoSec) {
-                System.out.println("update");
                 long deltaInNanoSec = currentTimeInNanoSec - lastTimeInNanoSec;
                 double deltaInSec = deltaInNanoSec / 1000000000d;
                 lastTimeInNanoSec = currentTimeInNanoSec;
@@ -139,13 +138,19 @@ public class GameScene extends BaseScene {
             }
         }
 
+        if (wallOfBricks.size() == 0){
+            navigator.goTo(SceneType.WINNER_SCREEN);
+        }
+
         if (ball.getY() > platform.getY()) {
             if (lifes.size() > 0) {
                 lifes.remove(lifes.size() - 1);
                 ball.resetToPlatform();
                 mousewasclicked = false;
-            } else {
+            }
+            else {
                 System.out.println("Game Over");
+                navigator.goTo(SceneType.GAMEOVER_SCREEN);
                 ball.resetToPlatform();
             }
         }
@@ -176,4 +181,5 @@ public class GameScene extends BaseScene {
             }
         }
     }
+
 }
