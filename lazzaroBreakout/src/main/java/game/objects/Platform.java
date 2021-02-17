@@ -31,13 +31,12 @@ public class Platform extends GameObject {
                     x += distanceToMove;
             }
             case STOP -> {
-                //TODO Cleanup
-
-              //   x = getX();
-              //  y = getY();
+                x = getX();
+                y = getY();
             }
         }
     }
+
 
     public Direction getDirection() {
         return direction;

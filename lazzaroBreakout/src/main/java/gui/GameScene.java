@@ -53,11 +53,17 @@ public class GameScene extends BaseScene {
         setOnMouseMoved(e -> {
             double mouseXPos = e.getX();
             double middlePoint = platform.getX() + PLATFORM.getWidth() / 2;
-            if (mouseXPos >= middlePoint) {
+            if (mouseXPos - middlePoint < 30 && mouseXPos - middlePoint > -30 ){
+                System.out.println("I stopped");
+                platform.setDirection(Direction.STOP);
+            }
+            else if (mouseXPos > middlePoint) {
                 platform.setDirection(Direction.RIGHT);
-            } else  if (mouseXPos < middlePoint){
+            }
+            else if (mouseXPos < middlePoint){
                 platform.setDirection(Direction.LEFT);
             }
+
             });
 
         setOnMouseClicked(e -> {
