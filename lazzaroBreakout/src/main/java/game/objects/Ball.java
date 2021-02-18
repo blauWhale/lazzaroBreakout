@@ -16,11 +16,17 @@ public class Ball extends GameObject {
     double stepX = 1;
     double stepY = -1;
     private final static double SPEED = 3;
+    private boolean extra = false;
 
     public Ball(double x, double y, Image image, Platform platform, Status status) {
+        this(x,y, image,platform,status,false);
+    }
+
+    public Ball(double x, double y, Image image, Platform platform, Status status, boolean isExtra) {
         super(x, y, image);
         this.platform = platform;
         this.status = status;
+        this.extra = isExtra;
     }
 
     @Override
@@ -89,6 +95,12 @@ public class Ball extends GameObject {
     }
     public static double getSPEED() {
         return SPEED;
+    }
+    public boolean isExtra() {
+        return extra;
+    }
+    public void setExtra(boolean extra) {
+        this.extra = extra;
     }
     public Status getStatus() {
         return status;

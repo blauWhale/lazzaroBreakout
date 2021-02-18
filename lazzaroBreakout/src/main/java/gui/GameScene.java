@@ -25,7 +25,6 @@ public class GameScene extends BaseScene {
 
     private Platform platform = new Platform(Images.PLATFORM);
     private long lastTimeInNanoSec;
-    private Ball ball = new Ball(0, 0, BALL, platform, Status.STOP);
     private List<Life> lifes = new ArrayList<Life>();
     private List<Brick> wallOfBricks = new ArrayList<Brick>();
     boolean mousewasclicked = false;
@@ -69,15 +68,15 @@ public class GameScene extends BaseScene {
             else if (mouseXPos < middlePoint){
                 platform.setDirection(Direction.LEFT);
             }
-            });
+        });
 
         setOnMouseClicked(e -> {
             if (mousewasclicked) {
                 //  ball.setStatus(Status.STOP);
 
             } else {
-                ball.setStatus(Status.PLAY);
-                ball.setStepY(-1);
+                balls.get(0).setStatus(Status.PLAY);
+                balls.get(0).setStepY(-1);
                 mousewasclicked = true;
             }
 
@@ -103,6 +102,9 @@ public class GameScene extends BaseScene {
         wallOfBricks.add(new Brick(300, 110, GREEN_BRICK, 0, 100));
         wallOfBricks.add(new Brick(400, 110, GREEN_BRICK, 0, 100));
 
+        balls.add( new Ball(0,0, BALL,platform, Status.STOP));
+
+
         lastTimeInNanoSec = System.nanoTime();
         AnimationTimer timer = new AnimationTimer() {
             @Override
@@ -122,7 +124,6 @@ public class GameScene extends BaseScene {
     private void paint() {
         gc.drawImage(GAME_BACKGROUND, 0, 0);
         platform.draw(gc);
-        ball.draw(gc);
         for (Life lifes : lifes) {
             lifes.draw(gc);
         }
@@ -138,20 +139,19 @@ public class GameScene extends BaseScene {
     }
 
     private void update(double deltaInSec) {
+        System.out.println(deltaInSec);
         platform.update(deltaInSec);
-        ball.update(deltaInSec);
-        for (Brick brick : wallOfBricks) {
-            if (brick.collidesWith(ball)) {
-                checkBrick();
-                if (brick.getDifficulty() == 0) {
-                    currentScore = currentScore + brick.getPoints();
-                    dropPowerUp(deltaInSec, brick.getX(), brick.getY());
-                    score.setText("Points:" + Integer.toString(currentScore));
-                    wallOfBricks.remove(brick);
+        for (Ball ball : balls) {
+            ball.update(deltaInSec);
+            checkBallBelowPlatform(ball);
+            checkBrickCollides(ball);
 
-                } else {
-                    brick.setDifficulty(brick.getDifficulty() - 1);
-                }
+        }
+        for (PowerUp powerUps : powerUpslist) {
+            powerUps.update(deltaInSec);
+            if (powerUps.collidesWith(platform)) {
+                checkPowerUp(powerUps.getPowerType());
+                powerUpslist.remove(powerUps);
             }
         }
 
@@ -166,42 +166,53 @@ public class GameScene extends BaseScene {
                 highScore.setText("High-Score:" + Integer.toString(highestScore));
             }
         }
+    }
 
-        if (ball.getY() > platform.getY()) {
-            if (lifes.size() > 0) {
-                lifes.remove(lifes.size() - 1);
-                ball.resetToPlatform();
-                mousewasclicked = false;
-            } else {
-                navigator.goTo(SceneType.GAMEOVER_SCREEN);
-                ball.resetToPlatform();
-                if (highestScore < currentScore) {
-                    highScore.setText("High-Score:" + Integer.toString(currentScore));
-                } else if (highestScore > currentScore) {
-                    highScore.setText("High-Score:" + Integer.toString(highestScore));
-                } else if (highestScore == currentScore) {
-                    highScore.setText("High-Score:" + Integer.toString(highestScore));
+    private void checkBrickCollides(Ball ball) {
+        for (Brick brick : wallOfBricks) {
+            if (brick.collidesWith(ball)){
+                checkBrick(ball);
+                if (brick.getDifficulty() == 0) {
+                    currentScore = currentScore + brick.getPoints();
+
+                    //TODO: make random call and random type
+                    dropPowerUp(brick.getX(), brick.getY(), 3);
+
+                    score.setText("Points:" + Integer.toString(currentScore));
+                    wallOfBricks.remove(brick);
+
+                } else {
+                    brick.setDifficulty(brick.getDifficulty() - 1);
                 }
-            }
-        }
-        for (Ball balls : balls) {
-            balls.update(deltaInSec);
-        }
-        for (Ball otherBalls : balls) {
-            if (otherBalls.getY() > platform.getY()) {
-                balls.remove(otherBalls);
-            }
-        }
-        for (PowerUp powerUps : powerUpslist) {
-            powerUps.update(deltaInSec);
-            if (powerUps.collidesWith(platform)) {
-                checkPowerUp(powerUps.getPowerType());
-                powerUpslist.remove(powerUps);
             }
         }
     }
 
-    private void checkBrick() {
+    private void checkBallBelowPlatform(Ball ball) {
+        if (ball.getY() > platform.getY()) {
+            if(ball.isExtra()){
+                balls.remove(ball);
+            }else {
+                if (lifes.size() > 0) {
+                    lifes.remove(lifes.size() - 1);
+                    ball.resetToPlatform();
+                    mousewasclicked = false;
+                } else {
+                    navigator.goTo(SceneType.GAMEOVER_SCREEN);
+                    ball.resetToPlatform();
+                    if (highestScore < currentScore) {
+                        highScore.setText("High-Score:" + Integer.toString(currentScore));
+                    } else if (highestScore > currentScore) {
+                        highScore.setText("High-Score:" + Integer.toString(highestScore));
+                    } else if (highestScore == currentScore) {
+                        highScore.setText("High-Score:" + Integer.toString(highestScore));
+                    }
+                }
+            }
+        }
+    }
+
+    private void checkBrick(Ball ball) {
         for (Brick b : wallOfBricks) {
             boolean brickDown = ball.getX() <= b.getX() + BRICK.getWidth() && ball.getX() >= b.getX() - BALL.getWidth() && ball.getY() <= b.getY() + BRICK.getHeight() + 3 && ball.getY() >= b.getY() + BRICK.getHeight() - 3;
             boolean brickUp = ball.getX() <= b.getX() + BRICK.getWidth() && ball.getX() >= b.getX() - BALL.getWidth() && ball.getY() <= b.getY() - BALL.getHeight() + 3 && ball.getY() >= b.getY() - BALL.getHeight() - 3;
@@ -226,10 +237,8 @@ public class GameScene extends BaseScene {
         }
     }
 
-    private void dropPowerUp(double deltaInSec, double brickPosX, double brickPosY) {
-        if (5 == /*Math.random() < deltaInSec */ POWERUP_CHANCE) {
-            powerUpslist.add(new PowerUp(brickPosX, brickPosY, POWERUP, 3));
-        }
+    private void dropPowerUp(double brickPosX, double brickPosY, int type) {
+        powerUpslist.add(new PowerUp(brickPosX, brickPosY, POWERUP, type));
     }
     private void checkPowerUp(double PowerType) {
         switch ((int) PowerType) {
@@ -246,7 +255,7 @@ public class GameScene extends BaseScene {
                 }
             }
             case 3 -> {
-                balls.add(new Ball(ball.getX() + 50,ball.getY(),Images.EXTRABALL,platform, Status.PLAY));
+                balls.add(new Ball(balls.get(0).getX() + 50, balls.get(0).getY(),Images.EXTRABALL,platform, Status.PLAY, true));
             }
             case 4 -> {
                 platform.setImage(LONGPLATFORM);
