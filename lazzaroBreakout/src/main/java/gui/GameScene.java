@@ -36,7 +36,7 @@ public class GameScene extends BaseScene {
     private Label score = new Label();
     private Label highScore = new Label();
     private List<Ball> balls = new ArrayList<Ball>();
-    private static final double POWERUP_CHANCE = 5;
+    private static final double POWERUP_CHANCE = 4;
     private List<PowerUp> powerUpslist = new ArrayList<PowerUp>();
 
 
@@ -71,7 +71,7 @@ public class GameScene extends BaseScene {
             else if (mouseXPos < middlePoint){
                 platform.setDirection(Direction.LEFT);
             }
-            });
+        });
 
         setOnMouseClicked(e -> {
             if (mousewasclicked) {
@@ -176,11 +176,11 @@ public class GameScene extends BaseScene {
                 checkBrick(ball);
                 if (brick.getDifficulty() == 0) {
                     currentScore = currentScore + brick.getPoints();
-
-                    int randomNum = ThreadLocalRandom.current().nextInt(1, 5 + 1);
-
-                    dropPowerUp(brick.getX(), brick.getY(), randomNum);
-                    System.out.println(randomNum);
+                    int randomNum = ThreadLocalRandom.current().nextInt(1, 9 + 1);
+                    if(randomNum > POWERUP_CHANCE){
+                        int PowerupType = ThreadLocalRandom.current().nextInt(1, 5 + 1);
+                        dropPowerUp(brick.getX(), brick.getY(), PowerupType);
+                    }
                     score.setText("Points:" + Integer.toString(currentScore));
                     wallOfBricks.remove(brick);
 
@@ -241,7 +241,7 @@ public class GameScene extends BaseScene {
     }
 
     private void dropPowerUp(double brickPosX, double brickPosY, int type) {
-            powerUpslist.add(new PowerUp(brickPosX, brickPosY, POWERUP, type));
+        powerUpslist.add(new PowerUp(brickPosX, brickPosY, POWERUP, type));
     }
     private void checkPowerUp(double PowerType) {
         switch ((int) PowerType) {

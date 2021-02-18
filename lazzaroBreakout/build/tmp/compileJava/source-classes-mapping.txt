@@ -6,8 +6,8 @@ gui/StartScene.java
  gui.StartScene
 game/Status.java
  game.Status
-game/objects/Life.java
- game.objects.Life
+game/objects/Brick.java
+ game.objects.Brick
 game/Points.java
  game.Points
 game/Direction.java
@@ -29,15 +29,15 @@ game/objects/PowerUp.java
  game.objects.PowerUp
 game/Space.java
  game.Space
-gui/Navigator.java
- gui.Navigator
-gui/GameOverScene.java
- gui.GameOverScene
-game/objects/Brick.java
- game.objects.Brick
 game/objects/Ball.java
  game.objects.Ball
  game.objects.Ball$1
+gui/GameOverScene.java
+ gui.GameOverScene
+game/objects/Life.java
+ game.objects.Life
+gui/Navigator.java
+ gui.Navigator
 gui/GameScene.java
  gui.GameScene
  gui.GameScene$1
