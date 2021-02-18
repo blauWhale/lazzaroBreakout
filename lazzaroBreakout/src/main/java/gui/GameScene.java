@@ -7,13 +7,18 @@ import game.Status;
 import game.objects.*;
 import gui.common.BaseScene;
 import javafx.animation.AnimationTimer;
+import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,13 +32,13 @@ import static game.Images.GREEN_BRICK;
 
 public class GameScene extends BaseScene {
 
-    private Platform platform = new Platform(Constant.SCREEN_WIDTH / 2, 420,Images.PLATFORM);
+    private Platform platform = new Platform(Constant.SCREEN_WIDTH / 2, 420, Images.PLATFORM);
     private long lastTimeInNanoSec;
     private List<Life> lifes = new ArrayList<Life>();
     private List<Brick> wallOfBricks = new ArrayList<Brick>();
     boolean mousewasclicked = false;
     private int currentScore = 0;
-    private int highestScore = 0;
+    private String highestScore = "";
     private Label score = new Label();
     private Label highScore = new Label();
     private List<Ball> balls = new ArrayList<Ball>();
@@ -46,7 +51,7 @@ public class GameScene extends BaseScene {
     }
 
     @Override
-    public void start(){
+    public void start() {
 
         score.setFont(new Font("Arial bold", 20));
         score.setLayoutX(420);
@@ -63,13 +68,11 @@ public class GameScene extends BaseScene {
         setOnMouseMoved(e -> {
             double mouseXPos = e.getX();
             double middlePoint = platform.getX() + PLATFORM.getWidth() / 2;
-            if (mouseXPos - middlePoint < 25 && mouseXPos - middlePoint > -25){
+            if (mouseXPos - middlePoint < 25 && mouseXPos - middlePoint > -25) {
                 platform.setDirection(Direction.STOP);
-            }
-            else if (mouseXPos > middlePoint) {
+            } else if (mouseXPos > middlePoint) {
                 platform.setDirection(Direction.RIGHT);
-            }
-            else if (mouseXPos < middlePoint){
+            } else if (mouseXPos < middlePoint) {
                 platform.setDirection(Direction.LEFT);
             }
         });
@@ -91,22 +94,22 @@ public class GameScene extends BaseScene {
         lifes.add(new Life(80, 450));
         lifes.add(new Life(100, 450));
 
-        wallOfBricks.add(new Brick(400, 50, BLACK_BRICK, 2,300));
+        wallOfBricks.add(new Brick(400, 50, BLACK_BRICK, 2, 300));
         wallOfBricks.add(new Brick(300, 50, BLACK_BRICK, 2, 300));
         wallOfBricks.add(new Brick(200, 50, BLACK_BRICK, 2, 300));
         wallOfBricks.add(new Brick(100, 50, BLACK_BRICK, 2, 300));
 
         wallOfBricks.add(new Brick(100, 80, BLUE_BRICK, 1, 200));
-        wallOfBricks.add(new Brick(200, 80, BLUE_BRICK, 1,200));
-        wallOfBricks.add(new Brick(300, 80, BLUE_BRICK, 1,200));
-        wallOfBricks.add(new Brick(400, 80, BLUE_BRICK, 1,200));
+        wallOfBricks.add(new Brick(200, 80, BLUE_BRICK, 1, 200));
+        wallOfBricks.add(new Brick(300, 80, BLUE_BRICK, 1, 200));
+        wallOfBricks.add(new Brick(400, 80, BLUE_BRICK, 1, 200));
 
-        wallOfBricks.add(new Brick(100, 110, GREEN_BRICK, 0,100));
+        wallOfBricks.add(new Brick(100, 110, GREEN_BRICK, 0, 100));
         wallOfBricks.add(new Brick(200, 110, GREEN_BRICK, 0, 100));
         wallOfBricks.add(new Brick(300, 110, GREEN_BRICK, 0, 100));
         wallOfBricks.add(new Brick(400, 110, GREEN_BRICK, 0, 100));
 
-        balls.add( new Ball(0,0, BALL,platform, Status.STOP));
+        balls.add(new Ball(0, 0, BALL, platform, Status.STOP));
 
 
         lastTimeInNanoSec = System.nanoTime();
@@ -143,7 +146,7 @@ public class GameScene extends BaseScene {
     }
 
     private void update(double deltaInSec) {
-        if (highestScore == 0){
+        if (highestScore.equals("")) {
             highestScore = this.getHighestScore();
         }
         platform.update(deltaInSec);
@@ -169,16 +172,17 @@ public class GameScene extends BaseScene {
 
     private void checkBrickCollides(Ball ball) {
         for (Brick brick : wallOfBricks) {
-            if (brick.collidesWith(ball)){
+            if (brick.collidesWith(ball)) {
                 checkBrick(ball);
                 if (brick.getDifficulty() == 0) {
                     currentScore = currentScore + brick.getPoints();
                     int randomNum = ThreadLocalRandom.current().nextInt(1, 9 + 1);
-                    if(randomNum > POWERUP_CHANCE){
+                    if (randomNum > POWERUP_CHANCE) {
                         int PowerupType = ThreadLocalRandom.current().nextInt(1, 5 + 1);
                         dropPowerUp(brick.getX(), brick.getY(), PowerupType);
                     }
-                    score.setText("Points:" + Integer.toString(currentScore));
+                    score.setText("Points:" + currentScore);
+                    highScore.setText("Highscore:" + highestScore);
                     wallOfBricks.remove(brick);
 
                 } else {
@@ -190,9 +194,9 @@ public class GameScene extends BaseScene {
 
     private void checkBallBelowPlatform(Ball ball) {
         if (ball.getY() > platform.getY()) {
-            if(ball.isExtra()){
+            if (ball.isExtra()) {
                 balls.remove(ball);
-            }else {
+            } else {
                 if (lifes.size() > 0) {
                     lifes.remove(lifes.size() - 1);
                     ball.resetToPlatform();
@@ -232,8 +236,34 @@ public class GameScene extends BaseScene {
     }
 
     private void dropPowerUp(double brickPosX, double brickPosY, int type) {
-        powerUpslist.add(new PowerUp(brickPosX, brickPosY, POWERUP, type));
+        switch (type) {
+            case 1 -> {
+                //Extra Leben
+                powerUpslist.add(new PowerUp(brickPosX, brickPosY, POWERUP, type));
+            }
+            case 2 -> {
+                //double points
+                powerUpslist.add(new PowerUp(brickPosX, brickPosY, POWERUPDOUBLE, type));
+            }
+            case 3 -> {
+                //Extra Ball
+                powerUpslist.add(new PowerUp(brickPosX, brickPosY, POWERUPBALL, type));
+            }
+            case 4 -> {
+                //long Platform
+                powerUpslist.add(new PowerUp(brickPosX, brickPosY, POWERUPPLATFORM, type));
+            }
+            case 5 -> {
+                //Easy Bricks
+                powerUpslist.add(new PowerUp(brickPosX, brickPosY, POWERUPBRICK, type));
+            }
+            case 6 -> {
+                //Quick Platform
+                powerUpslist.add(new PowerUp(brickPosX, brickPosY, POWERUPSPEED, type));
+            }
+        }
     }
+
     private void checkPowerUp(double PowerType) {
         switch ((int) PowerType) {
             case 1 -> {
@@ -250,7 +280,7 @@ public class GameScene extends BaseScene {
             }
             case 3 -> {
                 //Extra Ball
-                balls.add(new Ball(balls.get(0).getX() + 50, balls.get(0).getY(),Images.EXTRABALL,platform, Status.PLAY, true));
+                balls.add(new Ball(balls.get(0).getX() + 50, balls.get(0).getY(), Images.EXTRABALL, platform, Status.PLAY, true));
             }
             case 4 -> {
                 //long Platform
@@ -270,20 +300,23 @@ public class GameScene extends BaseScene {
         }
     }
 
-    public int getHighestScore(){
+    public String getHighestScore() {
         FileReader readFile;
         BufferedReader reader = null;
+        // Read the first line of the File and then return it
         try {
             readFile = new FileReader("highscore.dat");
             reader = new BufferedReader(readFile);
-            return Integer.parseInt(reader.readLine());
+            return reader.readLine();
         }
-        catch (Exception e){
-            return 0;
+        // If File not found or if an error occurs, set High-Score to 0
+        catch (Exception e) {
+            return "0";
         }
+        // Close the Reader
         finally {
             try {
-                if (reader != null){
+                if (reader != null) {
                     reader.close();
                 }
             } catch (IOException e) {
@@ -292,45 +325,51 @@ public class GameScene extends BaseScene {
         }
     }
 
-    public void checkScore(){
-        File scoreFile = new File("highscore.dat");
-        if (currentScore > highestScore){
-            highestScore = currentScore;
+    public void checkScore() {
+        System.out.println(highestScore);
+        // Split the Highscore int into an array of 2 parts, one the name and the other with the number(Name /:/ 100)
+        if (currentScore > Integer.parseInt(highestScore.split(":")[1])){
+
+            // Creates a Textfield that asks for Players name if they set a new record
+            /*GridPane grid = new GridPane();
+            grid.setPadding(new Insets(100, 100, 100, 100));
+            grid.setVgap(50);
+            grid.setHgap(50);
+            final TextField name = new TextField();
+            name.setPromptText("You set a new Highscore! Enter your name:");
+            name.setPrefColumnCount(100);
+            name.getText();
+            GridPane.setConstraints(name, 20, 20);
+            grid.getChildren().add(name);
+            Button submit = new Button("Submit");
+            GridPane.setConstraints(submit, 10, 20);
+            grid.getChildren().add(submit);*/
+
+            String name = JOptionPane.showInputDialog("You set a new Highscore! Enter your name:");
+            highestScore = name + ":" + currentScore;
+
+            File scoreFile = new File("highscore.dat");
+            // Create a new File if doesn't exist
             if (!scoreFile.exists()){
                 try {
                     scoreFile.createNewFile();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                } catch (Exception e) {}
             }
-        }
-        FileWriter writeFile = null;
-        BufferedWriter writer = null;
-        try {
+            // Creates a FileWriter, that stores the File and creates a BufferedWriter, which allows us to write to the File
+            FileWriter writeFile = null;
+            BufferedWriter writer = null;
             try {
                 writeFile = new FileWriter(scoreFile);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            writer = new BufferedWriter(writeFile);
-            try {
+                writer = new BufferedWriter(writeFile);
                 writer.write(this.highestScore);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        catch (Exception e){
-            //errors
-        }
-        finally {
-            if (writer != null){
+            } catch (Exception e){}
+            finally {
                 try {
-                    writer.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                    if (writer != null){
+                        writer.close();
+                    }
+                } catch (Exception e){}
             }
         }
     }
-
 }

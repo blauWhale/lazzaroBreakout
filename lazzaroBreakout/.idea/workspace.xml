@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="started US-13 and US-14">
-      <change afterPath="$PROJECT_DIR$/highscore.dat" afterDir="false" />
+    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="US-14">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/powerup_ball.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/powerup_brick.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/powerup_double.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/powerup_platform.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/powerup_speed.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
@@ -15,10 +19,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/GameOverScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/GameOverScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/Images.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/Images.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/GameOverScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/GameOverScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/highscore.dat" beforeDir="false" afterPath="$PROJECT_DIR$/highscore.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Images.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Images.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/LazzaroBreakoutApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/LazzaroBreakoutApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +95,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/javafx" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -242,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613468881217</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="US-14">
+      <created>1613649455188</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1613649455188</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +286,8 @@
     <MESSAGE value="US-8 done" />
     <MESSAGE value="US-9 done" />
     <MESSAGE value="refactoring of app class with Andreas" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring of app class with Andreas" />
+    <MESSAGE value="US-14" />
+    <option name="LAST_COMMIT_MESSAGE" value="US-14" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
