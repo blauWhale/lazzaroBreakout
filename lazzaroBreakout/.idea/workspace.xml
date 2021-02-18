@@ -4,21 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="US-13 done">
+    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="started US-13 and US-14">
+      <change afterPath="$PROJECT_DIR$/highscore.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/objects/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/objects/GameObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/objects/Platform$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/objects/Platform$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/objects/Platform.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/objects/Platform.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/GameOverScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/GameOverScene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/WinnerScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/WinnerScene.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/GameOverScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/GameOverScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,6 +108,19 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="lazzaroBreakout [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -159,9 +171,6 @@
       <workItem from="1613545291294" duration="1499000" />
       <workItem from="1613547769045" duration="1213000" />
       <workItem from="1613632699283" duration="34000" />
-      <workItem from="1613635815394" duration="716000" />
-      <workItem from="1613639435888" duration="712000" />
-      <workItem from="1613648743713" duration="753000" />
     </task>
     <task id="LOCAL-00001" summary="bricks working">
       <created>1612513605007</created>
@@ -233,21 +242,7 @@
       <option name="project" value="LOCAL" />
       <updated>1613468881217</updated>
     </task>
-    <task id="LOCAL-00011" summary="refactored ball to list and added parameter extra">
-      <created>1613635867263</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1613635867263</updated>
-    </task>
-    <task id="LOCAL-00012" summary="US-13 done">
-      <created>1613642835807</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1613642835807</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,9 +273,7 @@
     <MESSAGE value="US-8 done" />
     <MESSAGE value="US-9 done" />
     <MESSAGE value="refactoring of app class with Andreas" />
-    <MESSAGE value="refactored ball to list and added parameter extra" />
-    <MESSAGE value="US-13 done" />
-    <option name="LAST_COMMIT_MESSAGE" value="US-13 done" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring of app class with Andreas" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
