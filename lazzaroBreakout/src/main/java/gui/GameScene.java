@@ -1,5 +1,6 @@
 package gui;
 
+import game.Constant;
 import game.Direction;
 import game.Images;
 import game.Status;
@@ -15,6 +16,8 @@ import javafx.scene.text.Font;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 
 import static game.Constant.SCREEN_HEIGHT;
 import static game.Constant.SCREEN_WIDTH;
@@ -23,7 +26,7 @@ import static game.Images.GREEN_BRICK;
 
 public class GameScene extends BaseScene {
 
-    private Platform platform = new Platform(Images.PLATFORM);
+    private Platform platform = new Platform(Constant.SCREEN_WIDTH / 2, 420,Images.PLATFORM);
     private long lastTimeInNanoSec;
     private List<Life> lifes = new ArrayList<Life>();
     private List<Brick> wallOfBricks = new ArrayList<Brick>();
@@ -59,7 +62,7 @@ public class GameScene extends BaseScene {
         setOnMouseMoved(e -> {
             double mouseXPos = e.getX();
             double middlePoint = platform.getX() + PLATFORM.getWidth() / 2;
-            if (mouseXPos - middlePoint < 30 && mouseXPos - middlePoint > -30 ){
+            if (mouseXPos - middlePoint < 25 && mouseXPos - middlePoint > -25){
                 platform.setDirection(Direction.STOP);
             }
             else if (mouseXPos > middlePoint) {
@@ -68,7 +71,7 @@ public class GameScene extends BaseScene {
             else if (mouseXPos < middlePoint){
                 platform.setDirection(Direction.LEFT);
             }
-        });
+            });
 
         setOnMouseClicked(e -> {
             if (mousewasclicked) {
@@ -139,7 +142,6 @@ public class GameScene extends BaseScene {
     }
 
     private void update(double deltaInSec) {
-        System.out.println(deltaInSec);
         platform.update(deltaInSec);
         for (Ball ball : balls) {
             ball.update(deltaInSec);
@@ -175,9 +177,10 @@ public class GameScene extends BaseScene {
                 if (brick.getDifficulty() == 0) {
                     currentScore = currentScore + brick.getPoints();
 
-                    //TODO: make random call and random type
-                    dropPowerUp(brick.getX(), brick.getY(), 3);
+                    int randomNum = ThreadLocalRandom.current().nextInt(1, 5 + 1);
 
+                    dropPowerUp(brick.getX(), brick.getY(), randomNum);
+                    System.out.println(randomNum);
                     score.setText("Points:" + Integer.toString(currentScore));
                     wallOfBricks.remove(brick);
 
@@ -238,7 +241,7 @@ public class GameScene extends BaseScene {
     }
 
     private void dropPowerUp(double brickPosX, double brickPosY, int type) {
-        powerUpslist.add(new PowerUp(brickPosX, brickPosY, POWERUP, type));
+            powerUpslist.add(new PowerUp(brickPosX, brickPosY, POWERUP, type));
     }
     private void checkPowerUp(double PowerType) {
         switch ((int) PowerType) {
@@ -249,16 +252,29 @@ public class GameScene extends BaseScene {
                 }
             }
             case 2 -> {
-                //Doppelte Punkte
+                //double points
                 for (Brick brick : wallOfBricks) {
                     brick.setPoints(brick.getPoints() * 2);
                 }
             }
             case 3 -> {
+                //Extra Ball
                 balls.add(new Ball(balls.get(0).getX() + 50, balls.get(0).getY(),Images.EXTRABALL,platform, Status.PLAY, true));
             }
             case 4 -> {
+                //long Platform
                 platform.setImage(LONGPLATFORM);
+            }
+            case 5 -> {
+                //Easy Bricks
+                for (Brick brick : wallOfBricks) {
+                    brick.setDifficulty(0);
+                    brick.setImage(GREEN_BRICK);
+                }
+            }
+            case 6 -> {
+                //Quick Platform
+                platform.setPlatformSpeed(500);
             }
         }
     }

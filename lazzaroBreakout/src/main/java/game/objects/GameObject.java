@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 
 public abstract class GameObject {
 
-    private final Image image;
+    private Image image;
     protected double x;
     protected double y;
 
@@ -34,6 +34,10 @@ public abstract class GameObject {
 
     public Image getImage() {
         return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 
     protected BoundingBox getBoundingBox() {

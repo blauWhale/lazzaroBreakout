@@ -13,6 +13,5 @@ public class GameOverScene extends BaseScene {
 
     @Override
     public void start() {
-        //TODO
     }
 }

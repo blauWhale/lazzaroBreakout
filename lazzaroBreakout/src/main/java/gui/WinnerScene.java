@@ -13,6 +13,5 @@ public class WinnerScene extends BaseScene {
 
     @Override
     public void start() {
-        //TODO
     }
 }
