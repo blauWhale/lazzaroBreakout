@@ -7,17 +7,13 @@ import game.objects.*;
 import gui.common.BaseScene;
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static game.Constant.SCREEN_HEIGHT;
-import static game.Constant.SCREEN_WIDTH;
 import static game.Images.*;
 import static game.Images.GREEN_BRICK;
 
@@ -29,7 +25,7 @@ public class GameScene extends BaseScene {
     private List<Brick> wallOfBricks = new ArrayList<Brick>();
     boolean mousewasclicked = false;
     private int currentScore = 0;
-    private int highestScore = -1;
+    private int highestScore = 0;
     private Label score = new Label();
     private Label highScore = new Label();
     private List<Ball> balls = new ArrayList<Ball>();
@@ -136,10 +132,13 @@ public class GameScene extends BaseScene {
         for (Ball balls : balls) {
             balls.draw(gc);
         }
+
     }
 
     private void update(double deltaInSec) {
-        System.out.println(deltaInSec);
+        if (highestScore == 0){
+            highestScore = this.getHighestScore();
+        }
         platform.update(deltaInSec);
         for (Ball ball : balls) {
             ball.update(deltaInSec);
@@ -157,15 +156,9 @@ public class GameScene extends BaseScene {
 
         if (wallOfBricks.size() == 0) {
             navigator.goTo(SceneType.WINNER_SCREEN);
-            highestScore = currentScore;
-            if (highestScore < currentScore) {
-                highScore.setText("High-Score:" + Integer.toString(currentScore));
-            } else if (highestScore > currentScore) {
-                highScore.setText("High-Score:" + Integer.toString(highestScore));
-            } else if (highestScore == currentScore) {
-                highScore.setText("High-Score:" + Integer.toString(highestScore));
-            }
+            checkScore();
         }
+
     }
 
     private void checkBrickCollides(Ball ball) {
@@ -178,7 +171,7 @@ public class GameScene extends BaseScene {
                     //TODO: make random call and random type
                     dropPowerUp(brick.getX(), brick.getY(), 3);
 
-                    score.setText("Points:" + Integer.toString(currentScore));
+                    score.setText("Points:" + (currentScore));
                     wallOfBricks.remove(brick);
 
                 } else {
@@ -200,13 +193,7 @@ public class GameScene extends BaseScene {
                 } else {
                     navigator.goTo(SceneType.GAMEOVER_SCREEN);
                     ball.resetToPlatform();
-                    if (highestScore < currentScore) {
-                        highScore.setText("High-Score:" + Integer.toString(currentScore));
-                    } else if (highestScore > currentScore) {
-                        highScore.setText("High-Score:" + Integer.toString(highestScore));
-                    } else if (highestScore == currentScore) {
-                        highScore.setText("High-Score:" + Integer.toString(highestScore));
-                    }
+                    checkScore();
                 }
             }
         }
@@ -263,4 +250,70 @@ public class GameScene extends BaseScene {
         }
     }
 
+    public int getHighestScore(){
+        FileReader readFile;
+        BufferedReader reader = null;
+
+        try {
+            readFile = new FileReader("highscore.dat");
+            reader = new BufferedReader(readFile);
+            return Integer.parseInt(reader.readLine());
+        }
+        catch (Exception e){
+            return 0;
+        }
+        finally {
+            try {
+                if (reader != null){
+                    reader.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void checkScore(){
+        File scoreFile = new File("highscore.dat");
+        if (currentScore > highestScore){
+            highestScore = currentScore;
+            if (!scoreFile.exists()){
+                try {
+                    scoreFile.createNewFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        FileWriter writeFile = null;
+        BufferedWriter writer = null;
+        try {
+            try {
+                writeFile = new FileWriter(scoreFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            writer = new BufferedWriter(writeFile);
+            try {
+                writer.write(this.highestScore);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        catch (Exception e){
+            //errors
+        }
+
+        finally {
+            if (writer != null){
+                try {
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 }

@@ -3,6 +3,7 @@ package gui;
 import game.Images;
 import gui.common.BaseScene;
 
+
 public class GameOverScene extends BaseScene {
 
     public GameOverScene(Navigator navigator) {
@@ -13,6 +14,6 @@ public class GameOverScene extends BaseScene {
 
     @Override
     public void start() {
-        //TODO
+
     }
 }
