@@ -49,9 +49,9 @@ public class Sound {
             case POWERUP_PICKUP:
                 return "powerup_pickup.wav";
             case LOSER_SOUND:
-                return "";
+                return "loser_sound.wav";
             case WINNER_SOUND:
-                return "";
+                return "winner_sound.mp3";
             default:
                 throw new RuntimeException("No Soundfilename set for this enum value:" + soundEffect);
         }

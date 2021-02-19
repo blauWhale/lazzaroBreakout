@@ -1,6 +1,8 @@
 package gui;
 
 import game.Images;
+import game.Sound;
+import game.SoundEffectType;
 import gui.common.BaseScene;
 
 public class WinnerScene extends BaseScene {
@@ -13,5 +15,6 @@ public class WinnerScene extends BaseScene {
 
     @Override
     public void start() {
+        Sound.play(SoundEffectType.WINNER_SOUND);
     }
 }

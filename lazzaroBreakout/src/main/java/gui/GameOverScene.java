@@ -1,6 +1,8 @@
 package gui;
 
 import game.Images;
+import game.Sound;
+import game.SoundEffectType;
 import gui.common.BaseScene;
 
 
@@ -14,6 +16,6 @@ public class GameOverScene extends BaseScene {
 
     @Override
     public void start() {
-
+        Sound.play(SoundEffectType.LOSER_SOUND);
     }
 }

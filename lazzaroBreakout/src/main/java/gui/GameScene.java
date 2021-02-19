@@ -159,6 +159,9 @@ public class GameScene extends BaseScene {
             }
         }
 
+    }
+
+    private void checkIfWon() {
         if (wallOfBricks.size() == 0) {
             navigator.goTo(SceneType.WINNER_SCREEN);
             for (Ball ball : balls) {
@@ -188,6 +191,7 @@ public class GameScene extends BaseScene {
                 } else {
                     brick.setDifficulty(brick.getDifficulty() - 1);
                 }
+                checkIfWon();
             }
         }
     }
