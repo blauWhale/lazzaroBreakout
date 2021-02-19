@@ -177,7 +177,7 @@ public class GameScene extends BaseScene {
                     currentScore = currentScore + brick.getPoints();
                     int randomNum = ThreadLocalRandom.current().nextInt(1, 9 + 1);
                     if (randomNum > POWERUP_CHANCE) {
-                        int PowerupType = ThreadLocalRandom.current().nextInt(1, 5 + 1);
+                        int PowerupType = ThreadLocalRandom.current().nextInt(1, 6 + 1);
                         dropPowerUp(brick.getX(), brick.getY(), PowerupType);
                     }
                     score.setText("Points:" + currentScore);
@@ -270,25 +270,21 @@ public class GameScene extends BaseScene {
                 //Extra Leben
                 if (lifes.size() < 4) {
                     lifes.add(new Life(120, 450));
-                    Sound.play(SoundEffectType.POWERUP_PICKUP);
                 }
             }
             case 2 -> {
                 //double points
                 for (Brick brick : wallOfBricks) {
                     brick.setPoints(brick.getPoints() * 2);
-                    Sound.play(SoundEffectType.POWERUP_PICKUP);
                 }
             }
             case 3 -> {
                 //Extra Ball
                 balls.add(new Ball(balls.get(0).getX() + 50, balls.get(0).getY(), Images.EXTRABALL, platform, Status.PLAY, true));
-                Sound.play(SoundEffectType.POWERUP_PICKUP);
             }
             case 4 -> {
                 //long Platform
                 platform.setImage(LONGPLATFORM);
-                Sound.play(SoundEffectType.POWERUP_PICKUP);
             }
             case 5 -> {
                 //Easy Brick
@@ -296,14 +292,13 @@ public class GameScene extends BaseScene {
                     brick.setDifficulty(0);
                     brick.setImage(GREEN_BRICK);
                 }
-                Sound.play(SoundEffectType.POWERUP_PICKUP);
             }
             case 6 -> {
                 //Quick Platform
                 platform.setPlatformSpeed(500);
-                Sound.play(SoundEffectType.POWERUP_PICKUP);
             }
         }
+        Sound.play(SoundEffectType.POWERUP_PICKUP);
     }
 
     public String getHighestScore() {

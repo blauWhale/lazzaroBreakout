@@ -14,6 +14,7 @@ public class Sound {
         if (musicPlayer != null) {
             musicPlayer.stop();
         }
+
         musicPlayer = createMediaPlayer(getSoundFileName(music));
         musicPlayer.setVolume(0.5);
         musicPlayer.play();
@@ -47,6 +48,10 @@ public class Sound {
                 return "ball_bounce.wav";
             case POWERUP_PICKUP:
                 return "powerup_pickup.wav";
+            case LOSER_SOUND:
+                return "";
+            case WINNER_SOUND:
+                return "";
             default:
                 throw new RuntimeException("No Soundfilename set for this enum value:" + soundEffect);
         }
