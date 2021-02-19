@@ -38,7 +38,7 @@ public class GameScene extends BaseScene {
     private List<Brick> wallOfBricks = new ArrayList<Brick>();
     boolean mousewasclicked = false;
     private int currentScore = 0;
-    private String highestScore = "";
+    private String highestScore = "default:0";
     private Label score = new Label();
     private Label highScore = new Label();
     private List<Ball> balls = new ArrayList<Ball>();
@@ -56,14 +56,13 @@ public class GameScene extends BaseScene {
         score.setFont(new Font("Arial bold", 20));
         score.setLayoutX(420);
         score.setLayoutY(450);
-        highScore.setFont(new Font("Arial bold", 20));
+        highScore.setFont(new Font("Arial bold", 15));
         highScore.setLayoutX(420);
         highScore.setLayoutY(475);
 
         Group root = (Group) getRoot();
         root.getChildren().add(score);
         root.getChildren().add(highScore);
-
 
         setOnMouseMoved(e -> {
             double mouseXPos = e.getX();
@@ -111,6 +110,12 @@ public class GameScene extends BaseScene {
 
         balls.add(new Ball(0, 0, BALL, platform, Status.STOP));
 
+        if (highestScore.equals("default:0")) {
+            highestScore = this.getHighestScore();
+        }
+        checkScore();
+
+
 
         lastTimeInNanoSec = System.nanoTime();
         AnimationTimer timer = new AnimationTimer() {
@@ -146,9 +151,6 @@ public class GameScene extends BaseScene {
     }
 
     private void update(double deltaInSec) {
-        if (highestScore.equals("")) {
-            highestScore = this.getHighestScore();
-        }
         platform.update(deltaInSec);
         for (Ball ball : balls) {
             ball.update(deltaInSec);
@@ -319,32 +321,18 @@ public class GameScene extends BaseScene {
                 if (reader != null) {
                     reader.close();
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            } catch (Exception e) {}
         }
     }
 
     public void checkScore() {
-        System.out.println(highestScore);
-        // Split the Highscore int into an array of 2 parts, one the name and the other with the number(Name /:/ 100)
-        if (currentScore > Integer.parseInt(highestScore.split(":")[1])){
+        // Split the Highscore int into an array of 2 parts, one the name and the other with the number(Name /:/ 100) Samuel  ("100") -> int 100 -> 90 > 100 -> true/false
 
+        String[] subStrings = highestScore.split(":");
+        String currentHighScore = subStrings[1];
+        int currentHighScoreInt = Integer.parseInt(currentHighScore);
+        if (currentScore > currentHighScoreInt){ // Integer.parseInt(highestScore.split(":")[1])){
             // Creates a Textfield that asks for Players name if they set a new record
-            /*GridPane grid = new GridPane();
-            grid.setPadding(new Insets(100, 100, 100, 100));
-            grid.setVgap(50);
-            grid.setHgap(50);
-            final TextField name = new TextField();
-            name.setPromptText("You set a new Highscore! Enter your name:");
-            name.setPrefColumnCount(100);
-            name.getText();
-            GridPane.setConstraints(name, 20, 20);
-            grid.getChildren().add(name);
-            Button submit = new Button("Submit");
-            GridPane.setConstraints(submit, 10, 20);
-            grid.getChildren().add(submit);*/
-
             String name = JOptionPane.showInputDialog("You set a new Highscore! Enter your name:");
             highestScore = name + ":" + currentScore;
 
