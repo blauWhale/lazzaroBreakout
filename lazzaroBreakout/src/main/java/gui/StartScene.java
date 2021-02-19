@@ -17,7 +17,7 @@ public class StartScene extends BaseScene {
         Button easyButton = new Button("Easy");
         easyButton.setOnMouseClicked(event -> {
             setGameDifficulty(1);
-            setOnMouseClicked(e -> navigator.goTo(SceneType.GAME_SCREEN));
+            navigator.goTo(SceneType.GAME_SCREEN);
         });
         easyButton.setPadding(new Insets(10));
         easyButton.setPrefWidth(100);
@@ -27,7 +27,7 @@ public class StartScene extends BaseScene {
         Button normalButton = new Button("Normal");
         normalButton.setOnMouseClicked(event -> {
             setGameDifficulty(2);
-            setOnMouseClicked(e -> navigator.goTo(SceneType.GAME_SCREEN));
+            navigator.goTo(SceneType.GAME_SCREEN);
         });
         normalButton.setPadding(new Insets(10));
         normalButton.setPrefWidth(100);
@@ -37,15 +37,12 @@ public class StartScene extends BaseScene {
         Button hardButton = new Button("Hard");
         hardButton.setOnMouseClicked(event -> {
             setGameDifficulty(3);
-            setOnMouseClicked(e -> navigator.goTo(SceneType.GAME_SCREEN));
+            navigator.goTo(SceneType.GAME_SCREEN);
         });
         hardButton.setPadding(new Insets(10));
         hardButton.setPrefWidth(100);
         hardButton.setLayoutX(250);
         hardButton.setLayoutY(450);
-
-
-
 
 
         Group root = (Group) getRoot();
