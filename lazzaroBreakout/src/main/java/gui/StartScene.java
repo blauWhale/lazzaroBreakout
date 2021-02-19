@@ -1,7 +1,8 @@
 package gui;
 
 import game.Images;
-import game.Status;
+import game.MusicType;
+import game.Sound;
 import gui.common.BaseScene;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
@@ -55,6 +56,7 @@ public class StartScene extends BaseScene {
 
     @Override
     public void start() {
+        Sound.play(MusicType.INTRO);
     }
 
     public static int getGameDifficulty() {

@@ -4,20 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="added buttons to startscene">
+    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="US-14 and started US-15">
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/MusicType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Sound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/SoundEffectType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/background.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/ball_bounce.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/brick_destroyed.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/intro.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/powerup_pickup.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/objects/Ball.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/game/objects/Ball.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/StartScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/StartScene.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/highscore.dat" beforeDir="false" afterPath="$PROJECT_DIR$/highscore.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/objects/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/objects/Ball.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/StartScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/StartScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +67,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -88,7 +99,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Backup/lazzaroBreakout" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Lösung Final Version/clean-bbc-spaceinvaders" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -103,6 +114,7 @@
       <recent name="gui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\java\breakout\lazzarobreakout\lazzaroBreakout\src\main\resources\sounds" />
       <recent name="C:\Users\admin\java\breakout\lazzarobreakout\lazzaroBreakout\src\main\resources\Images" />
     </key>
   </component>
@@ -253,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613719659824</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="US-14 and started US-15">
+      <created>1613722709935</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1613722709935</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +305,8 @@
     <MESSAGE value="refactoring of app class with Andreas" />
     <MESSAGE value="US-14" />
     <MESSAGE value="added buttons to startscene" />
-    <option name="LAST_COMMIT_MESSAGE" value="added buttons to startscene" />
+    <MESSAGE value="US-14 and started US-15" />
+    <option name="LAST_COMMIT_MESSAGE" value="US-14 and started US-15" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

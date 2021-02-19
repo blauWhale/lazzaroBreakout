@@ -2,12 +2,12 @@ gui/WinnerScene.java
  gui.WinnerScene
 game/MouseEventHandler.java
  game.MouseEventHandler
-gui/StartScene.java
- gui.StartScene
+gui/Navigator.java
+ gui.Navigator
 game/Status.java
  game.Status
-game/objects/Brick.java
- game.objects.Brick
+gui/StartScene.java
+ gui.StartScene
 game/Points.java
  game.Points
 game/Direction.java
@@ -29,15 +29,22 @@ game/objects/PowerUp.java
  game.objects.PowerUp
 game/Space.java
  game.Space
-game/objects/Ball.java
- game.objects.Ball
- game.objects.Ball$1
+game/objects/Brick.java
+ game.objects.Brick
 gui/GameOverScene.java
  gui.GameOverScene
 game/objects/Life.java
  game.objects.Life
-gui/Navigator.java
- gui.Navigator
+game/MusicType.java
+ game.MusicType
+game/Sound.java
+ game.Sound
+ game.Sound$1
+game/objects/Ball.java
+ game.objects.Ball
+ game.objects.Ball$1
+game/SoundEffectType.java
+ game.SoundEffectType
 gui/GameScene.java
  gui.GameScene
  gui.GameScene$1

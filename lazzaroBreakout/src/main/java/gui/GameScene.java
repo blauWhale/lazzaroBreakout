@@ -1,9 +1,6 @@
 package gui;
 
-import game.Constant;
-import game.Direction;
-import game.Images;
-import game.Status;
+import game.*;
 import game.objects.*;
 import gui.common.BaseScene;
 import javafx.animation.AnimationTimer;
@@ -45,7 +42,6 @@ public class GameScene extends BaseScene {
     private static final double POWERUP_CHANCE = 4;
     private List<PowerUp> powerUpslist = new ArrayList<PowerUp>();
 
-
     public GameScene(Navigator navigator) {
         super(navigator, GAME_BACKGROUND);
     }
@@ -53,6 +49,7 @@ public class GameScene extends BaseScene {
     @Override
     public void start() {
 
+        Sound.play(MusicType.BACKGROUND);
         score.setFont(new Font("Arial bold", 20));
         score.setLayoutX(420);
         score.setLayoutY(450);
@@ -79,14 +76,11 @@ public class GameScene extends BaseScene {
         setOnMouseClicked(e -> {
             if (mousewasclicked) {
                 //  ball.setStatus(Status.STOP);
-
             } else {
                 balls.get(0).setStatus(Status.PLAY);
                 balls.get(0).setStepY(-1);
                 mousewasclicked = true;
             }
-
-
         });
 
         lifes.add(new Life(60, 450));
@@ -114,7 +108,7 @@ public class GameScene extends BaseScene {
             highestScore = this.getHighestScore();
         }
         checkScore();
-
+        checkGameDifficulty();
 
 
         lastTimeInNanoSec = System.nanoTime();
@@ -126,7 +120,6 @@ public class GameScene extends BaseScene {
                 lastTimeInNanoSec = currentTimeInNanoSec;
                 update(deltaInSec);
                 paint();
-
             }
         };
         timer.start();
@@ -168,6 +161,9 @@ public class GameScene extends BaseScene {
 
         if (wallOfBricks.size() == 0) {
             navigator.goTo(SceneType.WINNER_SCREEN);
+            for (Ball ball : balls) {
+                ball.resetToPlatform();
+            }
             checkScore();
         }
     }
@@ -175,6 +171,7 @@ public class GameScene extends BaseScene {
     private void checkBrickCollides(Ball ball) {
         for (Brick brick : wallOfBricks) {
             if (brick.collidesWith(ball)) {
+                Sound.play(SoundEffectType.BALL_BOUNCE);
                 checkBrick(ball);
                 if (brick.getDifficulty() == 0) {
                     currentScore = currentScore + brick.getPoints();
@@ -186,6 +183,7 @@ public class GameScene extends BaseScene {
                     score.setText("Points:" + currentScore);
                     highScore.setText("Highscore:" + highestScore);
                     wallOfBricks.remove(brick);
+                    Sound.play(SoundEffectType.BRICK_DESTROYED);
 
                 } else {
                     brick.setDifficulty(brick.getDifficulty() - 1);
@@ -272,32 +270,38 @@ public class GameScene extends BaseScene {
                 //Extra Leben
                 if (lifes.size() < 4) {
                     lifes.add(new Life(120, 450));
+                    Sound.play(SoundEffectType.POWERUP_PICKUP);
                 }
             }
             case 2 -> {
                 //double points
                 for (Brick brick : wallOfBricks) {
                     brick.setPoints(brick.getPoints() * 2);
+                    Sound.play(SoundEffectType.POWERUP_PICKUP);
                 }
             }
             case 3 -> {
                 //Extra Ball
                 balls.add(new Ball(balls.get(0).getX() + 50, balls.get(0).getY(), Images.EXTRABALL, platform, Status.PLAY, true));
+                Sound.play(SoundEffectType.POWERUP_PICKUP);
             }
             case 4 -> {
                 //long Platform
                 platform.setImage(LONGPLATFORM);
+                Sound.play(SoundEffectType.POWERUP_PICKUP);
             }
             case 5 -> {
-                //Easy Bricks
+                //Easy Brick
                 for (Brick brick : wallOfBricks) {
                     brick.setDifficulty(0);
                     brick.setImage(GREEN_BRICK);
                 }
+                Sound.play(SoundEffectType.POWERUP_PICKUP);
             }
             case 6 -> {
                 //Quick Platform
                 platform.setPlatformSpeed(500);
+                Sound.play(SoundEffectType.POWERUP_PICKUP);
             }
         }
     }
@@ -357,6 +361,32 @@ public class GameScene extends BaseScene {
                         writer.close();
                     }
                 } catch (Exception e){}
+            }
+        }
+    }
+
+    private void checkGameDifficulty() {
+        switch (StartScene.getGameDifficulty()) {
+            case 1 -> {
+                //Easy
+                for (Brick brick : wallOfBricks) {
+                    brick.setDifficulty(0);
+                    brick.setImage(GREEN_BRICK);
+                    brick.setPoints(100);
+                }
+            }
+            case 2 -> {
+                //Normal
+            }
+            case 3 -> {
+                //Hard
+                for (Brick brick : wallOfBricks) {
+                    brick.setDifficulty(2);
+                    if(brick.getImage() == GREEN_BRICK){
+                        brick.setImage(BLACK_BRICK);
+                    }
+                    brick.setPoints(300);
+                }
             }
         }
     }

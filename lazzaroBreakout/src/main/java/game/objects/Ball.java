@@ -49,6 +49,7 @@ public class Ball extends GameObject {
     private void changeDirectionAtPlatform() {
         if (this.collidesWith(platform)) {
             this.setStepY(-1);
+            Sound.play(SoundEffectType.BALL_BOUNCE);
         }
     }
     public void checkBorders() {
@@ -58,12 +59,15 @@ public class Ball extends GameObject {
         boolean atTopBorder = this.getY() <= 0;
         if (atLeftBorder) {
             this.setStepX(1);
+            Sound.play(SoundEffectType.BALL_BOUNCE);
         }
         if (atRightBorder) {
             this.setStepX(-1);
+            Sound.play(SoundEffectType.BALL_BOUNCE);
         }
         if (atTopBorder) {
             this.setStepY(1);
+            Sound.play(SoundEffectType.BALL_BOUNCE);
         }
         if (atBottomBorder) {
             this.setStepY(-1);
