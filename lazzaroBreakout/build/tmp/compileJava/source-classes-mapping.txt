@@ -1,13 +1,18 @@
-game/MusicType.java
- game.MusicType
-game/MouseEventHandler.java
- game.MouseEventHandler
-gui/Navigator.java
- gui.Navigator
-game/Status.java
- game.Status
+gui/WinnerScene.java
+ gui.WinnerScene
+game/Sound.java
+ game.Sound
+ game.Sound$1
 game/objects/Life.java
  game.objects.Life
+gui/StartScene.java
+ gui.StartScene
+game/Status.java
+ game.Status
+game/MusicType.java
+ game.MusicType
+game/objects/Brick.java
+ game.objects.Brick
 game/Points.java
  game.Points
 game/Direction.java
@@ -27,24 +32,15 @@ game/Images.java
  game.Images
 game/objects/PowerUp.java
  game.objects.PowerUp
-game/Space.java
- game.Space
-game/objects/Brick.java
- game.objects.Brick
-gui/GameOverScene.java
- gui.GameOverScene
-game/SoundEffectType.java
- game.SoundEffectType
-gui/WinnerScene.java
- gui.WinnerScene
-game/Sound.java
- game.Sound
- game.Sound$1
-gui/StartScene.java
- gui.StartScene
+gui/Navigator.java
+ gui.Navigator
 game/objects/Ball.java
  game.objects.Ball
  game.objects.Ball$1
+game/SoundEffectType.java
+ game.SoundEffectType
+gui/GameOverScene.java
+ gui.GameOverScene
 gui/GameScene.java
  gui.GameScene
  gui.GameScene$1
