@@ -18,15 +18,15 @@ Das Klassendiagramm ist von oben nach unten zu lesen. <br> Die verschiedenen Sze
 
 ### Unser Startscreen
 ![StartScreen](README_Images/StartScreen.png)
-Der Schwierigkeitsgrad wird gewählt und das Spiel gestartet.
+<br>Der Schwierigkeitsgrad wird gewählt und das Spiel gestartet.
 
 ### Unser Gamescreen
 ![GameScreen](README_Images/GameScreen.png)
-Die Platform wird mit der Maus gesteuert und die Ziegelsteine für Punkte mit dem Ball zerstört werden.
+<br>Die Platform wird mit der Maus gesteuert und die Ziegelsteine für Punkte mit dem Ball zerstört werden.
 
 ### Unser Winnerscreen
 ![WinnerScreen](README_Images/WinnerScreen.png)
-Sind alle Zeigelsteine zerstört, ist das Spiel gewonnen!
+<br>Sind alle Zeigelsteine zerstört, ist das Spiel gewonnen!
 
 
 ## Fazit
@@ -34,4 +34,4 @@ Wir haben enorme Fortschritte mit unseren Java-Kenntnissen gemacht. Die Grundlag
 Vielen User Stories sind wir mit respekt begegnet, konnten aber viele davon rasch und kompetent lösen.
 Die Zusammenarbeit im Team war gut, wir hatten ein gutes Arbeitsklima und arbeiteten vor allem in der ersten Hälfte zusammen am Code.
 In einem nächsten Projekt würden wir die Aufteilung der User Stories noch konsequenter durchziehen. <br><br>
-Wir hatten viel Spass beim Programmieren von Lazzaro Breakout und sind sehr stolz auf das Ergebnis.
+#### Wir hatten viel Spass beim Programmieren von Lazzaro Breakout und sind sehr stolz auf das Ergebnis.
