@@ -4,8 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="README.md more bug fixes">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="README.md even more bug fixes">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/GameOverScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/GameOverScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/WinnerScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/WinnerScene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/MusicType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/MusicType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Sound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/GameOverScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/GameOverScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/StartScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/StartScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/WinnerScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/WinnerScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614160171021</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="README.md even more bug fixes">
+      <created>1614160211394</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1614160211394</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +359,8 @@
     <MESSAGE value="README.md expanded" />
     <MESSAGE value="README.md bug fix" />
     <MESSAGE value="README.md more bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="README.md more bug fixes" />
+    <MESSAGE value="README.md even more bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="README.md even more bug fixes" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

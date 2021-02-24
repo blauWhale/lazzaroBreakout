@@ -15,7 +15,7 @@ public class Sound {
             musicPlayer.stop();
         }
 
-        musicPlayer = createMediaPlayer(getSoundFileName(music));
+        musicPlayer = createMediaPlayer(getMusicFileName(music));
         musicPlayer.setVolume(0.5);
         musicPlayer.play();
     }
@@ -57,12 +57,14 @@ public class Sound {
         }
     }
 
-    private static String getSoundFileName(MusicType music) {
+    private static String getMusicFileName(MusicType music) {
         switch (music) {
             case BACKGROUND:
                 return "background.wav";
             case INTRO:
                 return "intro.wav";
+            case STOP:
+                return "";
             default:
                 throw new RuntimeException("No Soundfilename set for this enum value:" + music);
         }

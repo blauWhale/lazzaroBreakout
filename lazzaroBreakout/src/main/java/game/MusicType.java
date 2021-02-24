@@ -2,5 +2,6 @@ package game;
 
 public enum MusicType {
     INTRO,
-    BACKGROUND
+    BACKGROUND,
+    STOP
 }

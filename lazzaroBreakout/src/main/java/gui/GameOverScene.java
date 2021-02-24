@@ -1,6 +1,7 @@
 package gui;
 
 import game.Images;
+import game.MusicType;
 import game.Sound;
 import game.SoundEffectType;
 import gui.common.BaseScene;

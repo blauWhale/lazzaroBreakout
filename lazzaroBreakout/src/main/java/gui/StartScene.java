@@ -13,7 +13,6 @@ public class StartScene extends BaseScene {
     public StartScene(Navigator navigator) {
         super(navigator, Images.WELCOME);
 
-        setOnMouseClicked(e -> navigator.goTo(SceneType.GAME_SCREEN));
 
         Button easyButton = new Button("Easy");
         easyButton.setOnMouseClicked(event -> {

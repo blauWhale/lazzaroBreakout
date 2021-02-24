@@ -3,10 +3,8 @@ gui/WinnerScene.java
 game/Sound.java
  game.Sound
  game.Sound$1
-game/objects/Life.java
- game.objects.Life
-gui/StartScene.java
- gui.StartScene
+gui/Navigator.java
+ gui.Navigator
 game/Status.java
  game.Status
 game/MusicType.java
@@ -32,8 +30,6 @@ game/Images.java
  game.Images
 game/objects/PowerUp.java
  game.objects.PowerUp
-gui/Navigator.java
- gui.Navigator
 game/objects/Ball.java
  game.objects.Ball
  game.objects.Ball$1
@@ -41,6 +37,10 @@ game/SoundEffectType.java
  game.SoundEffectType
 gui/GameOverScene.java
  gui.GameOverScene
+game/objects/Life.java
+ game.objects.Life
+gui/StartScene.java
+ gui.StartScene
 gui/GameScene.java
  gui.GameScene
  gui.GameScene$1

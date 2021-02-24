@@ -163,6 +163,7 @@ public class GameScene extends BaseScene {
     private void checkIfWon() {
         if (wallOfBricks.size() == 0) {
             navigator.goTo(SceneType.WINNER_SCREEN);
+            Sound.play(MusicType.STOP);
             for (Ball ball : balls) {
                 ball.resetToPlatform();
             }
@@ -206,6 +207,7 @@ public class GameScene extends BaseScene {
                     mousewasclicked = false;
                 } else {
                     navigator.goTo(SceneType.GAMEOVER_SCREEN);
+                    Sound.play(MusicType.STOP);
                     ball.resetToPlatform();
                     checkScore();
                 }
