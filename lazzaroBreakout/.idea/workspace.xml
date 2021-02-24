@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="README.md bug fix">
+    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="README.md more bug fixes">
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -289,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614160092842</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="README.md more bug fixes">
+      <created>1614160171021</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1614160171021</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +335,8 @@
     <MESSAGE value="US-15 and US-16 done" />
     <MESSAGE value="README.md expanded" />
     <MESSAGE value="README.md bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="README.md bug fix" />
+    <MESSAGE value="README.md more bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="README.md more bug fixes" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
