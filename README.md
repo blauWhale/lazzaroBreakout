@@ -4,7 +4,7 @@ Projektbeschreibung
 
 Ein Brick Breaker spiel im Stile von Atari Breakout. Der User kann mit der Maus die Plattform steuern und so den Ball nach oben lenken. Der Ball trifft auf die Ziegelsteine und zerschlägt diese. Je nach härte muss der Ziegelstein mehrmals getroffen werden.
 
-##Unser Mokup
+## Unser Mokup
 
 ![Breakout Game](https://zetcode.com/img/gfx/javagames/breakout.png)
 
@@ -14,22 +14,22 @@ Das Klassendiagramm ist von oben nach unten zu lesen. <br> Die verschiedenen Sze
 
 ![KlassenDiagramm](README_Images/Klassendiagramm/Klassendiagramm.jpg)
 
-##Version 1.0
+## Version 1.0
 
-###Unser Startscreen
+### Unser Startscreen
 ![StartScreen](README_Images/StartScreen.png)
 Der Schwierigkeitsgrad wird gewählt und das Spiel gestartet.
 
-###Unser Gamescreen
+### Unser Gamescreen
 ![GameScreen](README_Images/GameScreen.png)
 Die Platform wird mit der Maus gesteuert und die Ziegelsteine für Punkte mit dem Ball zerstört werden.
 
-###Unser Winnerscreen
+### Unser Winnerscreen
 ![WinnerScreen](README_Images/WinnerScreen.png)
 Sind alle Zeigelsteine zerstört, ist das Spiel gewonnen!
 
 
-##Fazit
+## Fazit
 Wir haben enorme Fortschritte mit unseren Java-Kenntnissen gemacht. Die Grundlagen konnten wir festigen und weiter ausbauen. <br>
 Vielen User Stories sind wir mit respekt begegnet, konnten aber viele davon rasch und kompetent lösen.
 Die Zusammenarbeit im Team war gut, wir hatten ein gutes Arbeitsklima und arbeiteten vor allem in der ersten Hälfte zusammen am Code.

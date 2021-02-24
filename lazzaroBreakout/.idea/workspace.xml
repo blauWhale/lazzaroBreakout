@@ -4,45 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="refactoring">
-      <change afterPath="$PROJECT_DIR$/../README_Images/GameScreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../README_Images/StartScreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../README_Images/WinnerScreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/Images/extraball.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/Images/game_over.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/Images/highscore.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/Images/longplatform.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/Images/powerup.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/Images/powerup_ball.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/Images/powerup_brick.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/Images/powerup_double.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/Images/powerup_platform.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/Images/powerup_speed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/Images/welcome.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/Images/winner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/sounds/background.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/sounds/ball_bounce.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/sounds/brick_destroyed.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/sounds/intro.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/sounds/loser_sound.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/sounds/powerup_pickup.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/sounds/winner_sound.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Klassendiagramm.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../README_Images/Klassendiagramm/Klassendiagramm.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Klassendiagramm.png" beforeDir="false" />
+    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="README.md expanded">
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/MouseEventHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/game/Space.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613745114798</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="README.md expanded">
+      <created>1614160018755</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1614160018755</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +319,8 @@
     <MESSAGE value="US-15 and US-16" />
     <MESSAGE value="refactoring" />
     <MESSAGE value="US-15 and US-16 done" />
-    <option name="LAST_COMMIT_MESSAGE" value="US-15 and US-16 done" />
+    <MESSAGE value="README.md expanded" />
+    <option name="LAST_COMMIT_MESSAGE" value="README.md expanded" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
