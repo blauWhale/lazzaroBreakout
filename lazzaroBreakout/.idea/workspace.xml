@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="refactoring">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/loser_sound.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/winner_sound.mp3" afterDir="false" />
+    <list default="true" id="399e20cc-e953-458e-b6fb-bba92bc21a4f" name="Default Changelist" comment="US-15 and US-16 done">
+      <change afterPath="$PROJECT_DIR$/../Klassendiagramm.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
@@ -15,13 +14,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/GameOverScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/GameOverScene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/gui/WinnerScene.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/gui/WinnerScene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Sound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/GameOverScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/GameOverScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/MouseEventHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Space.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/GameScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/WinnerScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/WinnerScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/LazzaroBreakoutApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/LazzaroBreakoutApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,13 +109,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,6 +172,7 @@
       <workItem from="1613545291294" duration="1499000" />
       <workItem from="1613547769045" duration="1213000" />
       <workItem from="1613632699283" duration="34000" />
+      <workItem from="1614154287470" duration="1950000" />
     </task>
     <task id="LOCAL-00001" summary="bricks working">
       <created>1612513605007</created>
@@ -281,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613739787538</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="US-15 and US-16 done">
+      <created>1613745114798</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1613745114798</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +322,8 @@
     <MESSAGE value="US-14 and started US-15" />
     <MESSAGE value="US-15 and US-16" />
     <MESSAGE value="refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+    <MESSAGE value="US-15 and US-16 done" />
+    <option name="LAST_COMMIT_MESSAGE" value="US-15 and US-16 done" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

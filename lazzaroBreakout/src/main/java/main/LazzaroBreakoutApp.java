@@ -6,6 +6,8 @@ import javafx.application.Application;
 
 import javafx.stage.Stage;
 
+import javax.swing.*;
+
 
 public class LazzaroBreakoutApp extends Application {
 
@@ -17,6 +19,13 @@ public class LazzaroBreakoutApp extends Application {
 
     @Override
     public void start(Stage stage) {
+
+        /*Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+            public void uncaughtException(Thread t, Throwable e) {
+                // TODO: Logging
+                JOptionPane.showMessageDialog(null, "Something went wrong!");
+            }
+        });*/
 
         stage.setTitle("Lazzaro Breakout");
         Navigator navigator = new Navigator(stage);

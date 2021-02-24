@@ -125,7 +125,6 @@ public class GameScene extends BaseScene {
         timer.start();
     }
 
-
     private void paint() {
         gc.drawImage(GAME_BACKGROUND, 0, 0);
         platform.draw(gc);
