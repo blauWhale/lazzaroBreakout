@@ -3,17 +3,23 @@ package game;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Sound {
     private static MediaPlayer musicPlayer;
     private final static Map<String, Media> cache = new HashMap<>();
+    private static MediaPlayer soundEffectPlayer;
+    private static ArrayList<MediaPlayer> testEffects = new ArrayList<>();
 
     public static void play(MusicType music) {
         if (musicPlayer != null) {
             musicPlayer.stop();
         }
+
+        if(music == MusicType.STOP)
+            return;
 
         musicPlayer = createMediaPlayer(getMusicFileName(music));
         musicPlayer.setVolume(0.5);
@@ -21,8 +27,32 @@ public class Sound {
     }
 
     public static void play(SoundEffectType soundEffect) {
-        MediaPlayer player = createMediaPlayer(getSoundFileName(soundEffect));
-        player.play();
+
+        if (soundEffectPlayer != null) {
+            soundEffectPlayer.stop();
+        }
+
+        if(soundEffect == SoundEffectType.STOP)
+            return;
+
+        soundEffectPlayer = createMediaPlayer(getSoundFileName(soundEffect));
+        soundEffectPlayer.play();
+        soundEffectPlayer.setOnEndOfMedia(()-> System.out.println("Effect done"));
+    }
+
+    public static void playTest(SoundEffectType soundEffect){
+        for(MediaPlayer player : testEffects){
+            if(player.getCurrentTime() == player.getStopTime()){
+                player.dispose();
+            }
+        }
+
+        if(soundEffect == SoundEffectType.STOP)
+            return;
+
+        MediaPlayer newPlayer = createMediaPlayer(getSoundFileName(soundEffect));
+        newPlayer.play();
+        testEffects.add(newPlayer);
     }
 
     private static MediaPlayer createMediaPlayer(String filePath){
@@ -52,6 +82,8 @@ public class Sound {
                 return "loser_sound.wav";
             case WINNER_SOUND:
                 return "winner_sound.mp3";
+            case STOP:
+                return "";
             default:
                 throw new RuntimeException("No Soundfilename set for this enum value:" + soundEffect);
         }

@@ -21,8 +21,13 @@ public class Navigator {
     }
 
     public void goTo(SceneType scene) {
-        BaseScene activeScene = viewMap.get(scene);
-        activeScene.start();
-        stage.setScene(activeScene);
+        BaseScene currentScene = (BaseScene) stage.getScene();
+        if (currentScene != null){
+            currentScene.stop();
+        }
+
+        BaseScene nextScene = viewMap.get(scene);
+        nextScene.start();
+        stage.setScene(nextScene);
     }
 }

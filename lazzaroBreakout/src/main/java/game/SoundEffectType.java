@@ -5,5 +5,6 @@ public enum SoundEffectType {
     BALL_BOUNCE,
     POWERUP_PICKUP,
     WINNER_SOUND,
-    LOSER_SOUND
+    LOSER_SOUND,
+    STOP
 }

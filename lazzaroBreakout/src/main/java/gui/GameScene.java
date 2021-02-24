@@ -41,9 +41,14 @@ public class GameScene extends BaseScene {
     private List<Ball> balls = new ArrayList<Ball>();
     private static final double POWERUP_CHANCE = 4;
     private List<PowerUp> powerUpslist = new ArrayList<PowerUp>();
+    private AnimationTimer timer;
 
     public GameScene(Navigator navigator) {
         super(navigator, GAME_BACKGROUND);
+
+        Group root = (Group) getRoot();
+        root.getChildren().add(score);
+        root.getChildren().add(highScore);
     }
 
     @Override
@@ -56,10 +61,6 @@ public class GameScene extends BaseScene {
         highScore.setFont(new Font("Arial bold", 15));
         highScore.setLayoutX(420);
         highScore.setLayoutY(475);
-
-        Group root = (Group) getRoot();
-        root.getChildren().add(score);
-        root.getChildren().add(highScore);
 
         setOnMouseMoved(e -> {
             double mouseXPos = e.getX();
@@ -112,7 +113,7 @@ public class GameScene extends BaseScene {
 
 
         lastTimeInNanoSec = System.nanoTime();
-        AnimationTimer timer = new AnimationTimer() {
+        timer = new AnimationTimer() {
             @Override
             public void handle(long currentTimeInNanoSec) {
                 long deltaInNanoSec = currentTimeInNanoSec - lastTimeInNanoSec;
@@ -123,7 +124,21 @@ public class GameScene extends BaseScene {
             }
         };
         timer.start();
+
     }
+
+    @Override
+    public void stop() {
+        timer.stop();
+        Sound.play(MusicType.STOP);
+        lifes.removeAll(lifes);
+        balls.removeAll(balls);
+        powerUpslist.removeAll(powerUpslist);
+        platform.setImage(PLATFORM);
+        currentScore = 0;
+
+    }
+
 
     private void paint() {
         gc.drawImage(GAME_BACKGROUND, 0, 0);
@@ -150,31 +165,34 @@ public class GameScene extends BaseScene {
             checkBrickCollides(ball);
 
         }
+        ArrayList<PowerUp> deadPowerups = new ArrayList<>();
         for (PowerUp powerUps : powerUpslist) {
             powerUps.update(deltaInSec);
             if (powerUps.collidesWith(platform)) {
                 checkPowerUp(powerUps.getPowerType());
-                powerUpslist.remove(powerUps);
+                deadPowerups.add(powerUps);
             }
         }
+        powerUpslist.removeAll(deadPowerups);
 
     }
 
     private void checkIfWon() {
         if (wallOfBricks.size() == 0) {
-            navigator.goTo(SceneType.WINNER_SCREEN);
             Sound.play(MusicType.STOP);
             for (Ball ball : balls) {
                 ball.resetToPlatform();
             }
             checkScore();
+            navigator.goTo(SceneType.WINNER_SCREEN);
         }
     }
 
     private void checkBrickCollides(Ball ball) {
+        ArrayList<Brick> deadBricks = new ArrayList<>();
         for (Brick brick : wallOfBricks) {
             if (brick.collidesWith(ball)) {
-                Sound.play(SoundEffectType.BALL_BOUNCE);
+                Sound.playTest(SoundEffectType.BALL_BOUNCE);
                 checkBrick(ball);
                 if (brick.getDifficulty() == 0) {
                     currentScore = currentScore + brick.getPoints();
@@ -185,15 +203,16 @@ public class GameScene extends BaseScene {
                     }
                     score.setText("Points:" + currentScore);
                     highScore.setText("Highscore:" + highestScore);
-                    wallOfBricks.remove(brick);
-                    Sound.play(SoundEffectType.BRICK_DESTROYED);
+                    deadBricks.add(brick);
+                    Sound.playTest(SoundEffectType.BRICK_DESTROYED);
 
                 } else {
                     brick.setDifficulty(brick.getDifficulty() - 1);
                 }
-                checkIfWon();
             }
         }
+        wallOfBricks.removeAll(deadBricks);
+        checkIfWon();
     }
 
     private void checkBallBelowPlatform(Ball ball) {
@@ -207,9 +226,10 @@ public class GameScene extends BaseScene {
                     mousewasclicked = false;
                 } else {
                     navigator.goTo(SceneType.GAMEOVER_SCREEN);
-                    Sound.play(MusicType.STOP);
+
                     ball.resetToPlatform();
                     checkScore();
+
                 }
             }
         }
@@ -303,7 +323,7 @@ public class GameScene extends BaseScene {
                 platform.setPlatformSpeed(500);
             }
         }
-        Sound.play(SoundEffectType.POWERUP_PICKUP);
+        Sound.playTest(SoundEffectType.POWERUP_PICKUP);
     }
 
     public String getHighestScore() {

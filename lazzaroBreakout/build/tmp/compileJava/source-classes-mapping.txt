@@ -3,8 +3,8 @@ gui/WinnerScene.java
 game/Sound.java
  game.Sound
  game.Sound$1
-gui/Navigator.java
- gui.Navigator
+gui/StartScene.java
+ gui.StartScene
 game/Status.java
  game.Status
 game/MusicType.java
@@ -39,8 +39,8 @@ gui/GameOverScene.java
  gui.GameOverScene
 game/objects/Life.java
  game.objects.Life
-gui/StartScene.java
- gui.StartScene
+gui/Navigator.java
+ gui.Navigator
 gui/GameScene.java
  gui.GameScene
  gui.GameScene$1

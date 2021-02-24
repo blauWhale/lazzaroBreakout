@@ -58,6 +58,11 @@ public class StartScene extends BaseScene {
         Sound.play(MusicType.INTRO);
     }
 
+    @Override
+    public void stop() {
+
+    }
+
     public static int getGameDifficulty() {
         return gameDifficulty;
     }
