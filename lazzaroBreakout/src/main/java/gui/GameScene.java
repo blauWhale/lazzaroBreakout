@@ -198,7 +198,7 @@ public class GameScene extends BaseScene {
                     currentScore = currentScore + brick.getPoints();
                     int randomNum = ThreadLocalRandom.current().nextInt(1, 9 + 1);
                     if (randomNum > POWERUP_CHANCE) {
-                        int PowerupType = 3; //ThreadLocalRandom.current().nextInt(1, 6 + 1);
+                        int PowerupType = ThreadLocalRandom.current().nextInt(1, 6 + 1);
                         dropPowerUp(brick.getX(), brick.getY(), PowerupType);
                     }
                     deadBricks.add(brick);
