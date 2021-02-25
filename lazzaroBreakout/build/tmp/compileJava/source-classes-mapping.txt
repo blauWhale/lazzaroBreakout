@@ -1,10 +1,9 @@
-gui/WinnerScene.java
- gui.WinnerScene
-game/Sound.java
- game.Sound
- game.Sound$1
-gui/StartScene.java
- gui.StartScene
+gui/Navigator.java
+ gui.Navigator
+game/SoundEffectType.java
+ game.SoundEffectType
+game/objects/Brick.java
+ game.objects.Brick
 game/Status.java
  game.Status
 game/MusicType.java
@@ -28,19 +27,21 @@ game/Images.java
  game.Images
 game/objects/PowerUp.java
  game.objects.PowerUp
-gui/Navigator.java
- gui.Navigator
-game/SoundEffectType.java
- game.SoundEffectType
-gui/GameOverScene.java
- gui.GameOverScene
-game/objects/Brick.java
- game.objects.Brick
+gui/WinnerScene.java
+ gui.WinnerScene
+game/Sound.java
+ game.Sound
+ game.Sound$1
+gui/StartScene.java
+ gui.StartScene
 game/objects/Ball.java
  game.objects.Ball
  game.objects.Ball$1
+gui/GameOverScene.java
+ gui.GameOverScene
 gui/GameScene.java
  gui.GameScene
  gui.GameScene$1
 main/LazzaroBreakoutApp.java
  main.LazzaroBreakoutApp
+ main.LazzaroBreakoutApp$1

@@ -17,7 +17,6 @@ public class GameOverScene extends BaseScene {
 
     @Override
     public void start() {
-        System.out.println("Loser");
         Sound.play(SoundEffectType.LOSER_SOUND);
 
     }

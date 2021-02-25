@@ -37,7 +37,6 @@ public class Sound {
 
         soundEffectPlayer = createMediaPlayer(getSoundFileName(soundEffect));
         soundEffectPlayer.play();
-        soundEffectPlayer.setOnEndOfMedia(()-> System.out.println("Effect done"));
     }
 
     public static void playTest(SoundEffectType soundEffect){
