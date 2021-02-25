@@ -211,9 +211,10 @@ public class GameScene extends BaseScene {
     }
 
     private void checkBallBelowPlatform(Ball ball) {
+        ArrayList<Ball> deadExtraBall = new ArrayList<>();
         if (ball.getY() > platform.getY()) {
             if (ball.isExtra()) {
-                balls.remove(ball);
+                deadExtraBall.add(ball);
             } else {
                 if (lifes.size() > 0) {
                     lifes.remove(lifes.size() - 1);
@@ -221,13 +222,12 @@ public class GameScene extends BaseScene {
                     mousewasclicked = false;
                 } else {
                     navigator.goTo(SceneType.GAMEOVER_SCREEN);
-
                     ball.resetToPlatform();
                     checkScore();
-
                 }
             }
         }
+        balls.removeAll(deadExtraBall);
     }
 
     private void checkBrick(Ball ball) {
