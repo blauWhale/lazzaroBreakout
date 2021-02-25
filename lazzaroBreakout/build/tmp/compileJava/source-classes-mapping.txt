@@ -9,10 +9,8 @@ game/Status.java
  game.Status
 game/MusicType.java
  game.MusicType
-game/objects/Brick.java
- game.objects.Brick
-game/Points.java
- game.Points
+game/objects/Life.java
+ game.objects.Life
 game/Direction.java
  game.Direction
 game/objects/Platform.java
@@ -30,17 +28,17 @@ game/Images.java
  game.Images
 game/objects/PowerUp.java
  game.objects.PowerUp
-game/objects/Ball.java
- game.objects.Ball
- game.objects.Ball$1
+gui/Navigator.java
+ gui.Navigator
 game/SoundEffectType.java
  game.SoundEffectType
 gui/GameOverScene.java
  gui.GameOverScene
-game/objects/Life.java
- game.objects.Life
-gui/Navigator.java
- gui.Navigator
+game/objects/Brick.java
+ game.objects.Brick
+game/objects/Ball.java
+ game.objects.Ball
+ game.objects.Ball$1
 gui/GameScene.java
  gui.GameScene
  gui.GameScene$1

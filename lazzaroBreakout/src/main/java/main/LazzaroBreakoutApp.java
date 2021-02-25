@@ -20,12 +20,14 @@ public class LazzaroBreakoutApp extends Application {
     @Override
     public void start(Stage stage) {
 
-        /*Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             public void uncaughtException(Thread t, Throwable e) {
                 // TODO: Logging
+                e.printStackTrace();
+                System.out.println(e.getMessage());
                 JOptionPane.showMessageDialog(null, "Something went wrong!");
             }
-        });*/
+        });
 
         stage.setTitle("Lazzaro Breakout");
         Navigator navigator = new Navigator(stage);

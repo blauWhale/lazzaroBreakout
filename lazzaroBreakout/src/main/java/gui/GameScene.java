@@ -156,12 +156,15 @@ public class GameScene extends BaseScene {
 
     private void update(double deltaInSec) {
         platform.update(deltaInSec);
+        ArrayList<Ball> deadExtraBall = new ArrayList<>();
         for (Ball ball : balls) {
             ball.update(deltaInSec);
-            checkBallBelowPlatform(ball);
+            if (checkBallBelowPlatform(ball)){
+                deadExtraBall.add(ball);
+            }
             checkBrickCollides(ball);
-
         }
+        balls.removeAll(deadExtraBall);
         ArrayList<PowerUp> deadPowerups = new ArrayList<>();
         for (PowerUp powerUps : powerUpslist) {
             powerUps.update(deltaInSec);
@@ -195,7 +198,7 @@ public class GameScene extends BaseScene {
                     currentScore = currentScore + brick.getPoints();
                     int randomNum = ThreadLocalRandom.current().nextInt(1, 9 + 1);
                     if (randomNum > POWERUP_CHANCE) {
-                        int PowerupType = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+                        int PowerupType = 3; //ThreadLocalRandom.current().nextInt(1, 6 + 1);
                         dropPowerUp(brick.getX(), brick.getY(), PowerupType);
                     }
                     deadBricks.add(brick);
@@ -210,11 +213,11 @@ public class GameScene extends BaseScene {
         checkIfWon();
     }
 
-    private void checkBallBelowPlatform(Ball ball) {
-        ArrayList<Ball> deadExtraBall = new ArrayList<>();
+    private boolean checkBallBelowPlatform(Ball ball) {
+
         if (ball.getY() > platform.getY()) {
             if (ball.isExtra()) {
-                deadExtraBall.add(ball);
+                return true;
             } else {
                 if (lifes.size() > 0) {
                     lifes.remove(lifes.size() - 1);
@@ -225,9 +228,10 @@ public class GameScene extends BaseScene {
                     ball.resetToPlatform();
                     checkScore();
                 }
+
             }
         }
-        balls.removeAll(deadExtraBall);
+        return false;
     }
 
     private void checkBrick(Ball ball) {

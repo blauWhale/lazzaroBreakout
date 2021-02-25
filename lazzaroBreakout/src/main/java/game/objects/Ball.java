@@ -31,7 +31,6 @@ public class Ball extends GameObject {
 
     @Override
     public void update(double deltaInSec) {
-        double distanceToMove = SPEED * deltaInSec;
         switch (status) {
             case PLAY -> {
                 this.setX(this.getX() + this.getStepX() * getSPEED());
